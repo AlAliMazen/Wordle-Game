@@ -12,9 +12,26 @@
 </head>
 <body>
     <header>
-        <h1>Wordle Game</h1>
+        <h1 id="title">Wordle Game</h1>
+        <hr>
     </header>
     <main>
+        <!--How to play Note-->
+        <div class="How-to-play">
+            <h2>how to play</h2>
+            <ol>
+                <li>Guess a 5 letter word</li>
+                <li>Click <strong>Submit</strong> to check word</li>
+                <li>Click <strong>Del</strong> to remove last letter</li>
+            </ol>
+            <p>
+                Letter at right position will turn square to green
+            </p>
+            <p>
+                Letters at wrong position will turn it square to yellow
+            </p>
+            <button>OK</button>
+        </div>
         <div id="game-board"></div>
         <div id="keyboard-keys"></div>
     </main>
