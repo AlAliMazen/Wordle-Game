@@ -37,4 +37,9 @@ function hideInstructions(){
     let howToPlaySection = document.getElementById('game-instructions');
     howToPlaySection.style.display='none';
 }
-
+//getting user input 
+let letter;
+function getUsrInput(pressedKey){
+    letter=pressedKey.textContent;
+    console.log(letter.toUpperCase());
+}
