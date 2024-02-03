@@ -9,6 +9,9 @@
 body{
     font-family: 'Noto Sans', sans-serif;
     background-color: #ebebeb;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 header{
     text-align: center;
@@ -22,6 +25,21 @@ header{
 }
 header> hr{
     height: 3px;
+}
+
+#controllers{
+    margin: 5px auto;
+    display: none;
+    border: 1px solid #06D6A0;
+    width: 60%;
+    border-radius: 10px;
+
+}
+
+#controllers div i{
+    padding: 5px;
+    font-size: 1.5rem;
+    color: #073B4C;
 }
 
 #game-instructions{
