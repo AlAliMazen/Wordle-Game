@@ -81,3 +81,28 @@ ol ,ul{
     font-weight: bolder;
 }
 
+
+/*game board should be grid*/
+#game-board{
+    display: grid;
+    grid-template-columns:repeat(5, 1fr);
+    grid-template-rows:repeat(6, 1fr);
+    grid-gap:2px;
+    margin:5px auto;
+    border: 1px solid red;
+    width: 95%;
+    box-shadow: 5px 5px 10px #118AB2;
+    
+    
+}
+
+.letter-squar{
+    min-width: 50px;
+    min-height: 50px;
+    border: 1px solid #118AB2;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bolder;
+}
+
