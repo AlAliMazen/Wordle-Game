@@ -9,8 +9,11 @@
 
 let emptyLetterBx=0;
 let letter;
-let expectedWord="";
+let expectedWord='';
+let expectedWordsArr=[[]];  //should only have 6 words
+let rowIndex=0;          //to know which word at which index check
 let ltrsSquareArr=document.querySelectorAll(".letter-squar");
+let randomWord="apply";
 
 
 function showInstructions(){
@@ -53,8 +56,35 @@ function hideInstructions(){
 
 function insertLetter(usrTypedLtr){
     ltrsSquareArr[emptyLetterBx].textContent=usrTypedLtr;
+    expectedWord+=usrTypedLtr;
     emptyLetterBx++;
 }
+function checkGuessedWord(expectedWord){
+    if(expectedWord.length===5){
+        if(expectedWord===randomWord){
+            window.alert("Hooray, you have guessed the right word");
+        }else{
+            if(rowIndex>5){
+                window.alert("Game over ! right word is: "+randomWord)
+            }else{
+                //call a function to keep readability 
+                compareWords(expectedWord);
+            }
+        }
+    }else{
+        window.alert("Word must have 5 letters to be submitted")
+    }
+}
+//compares letter one by one to see right letter at right and wrong positons as well as not included letters
+function compareWords(usrWord){
+
+}
+
+//function to remove last input letter from the row (we have 6 rows )
+function removeLastInput(expectedWord){
+    
+}
+
 //getting user input 
 function getUsrInput(pressedKey){
     letter=pressedKey.textContent;
@@ -65,9 +95,9 @@ function getUsrInput(pressedKey){
         insertLetter(letter);
     }else if(letter==="Submit"){
         //check inserted word
-        checkGuessedWord();
+        checkGuessedWord(expectedWord);
     }else{
         //remove last letter 
-        removeLastInput();
+        removeLastInput(expectedWord);
     }
 }
