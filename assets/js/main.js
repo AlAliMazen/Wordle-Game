@@ -53,10 +53,10 @@ function hideInstructions() {
 
     let gameBoard = document.getElementById('game-board');
     gameBoard.style.display = 'grid';
-    gameBoard.style.gridTemplateColumns = "60px 60px 60px 60px 60px";
-    gameBoard.style.gridTemplateRows = "65px 65px 65px 65px 65px 65px";
-    gameBoard.style.justifyContent = "space-evenly";
-    gameBoard.style.alignItems = "center"
+    gameBoard.style.gridTemplateColumns = "repeat(5,1fr)";
+    gameBoard.style.gridTemplateRows = "repeat(6,1fr)";
+    gameBoard.style.justifyContent = "space-around";
+    gameBoard.style.justifyItems="stretch";
     //gameBoard.style.gridGap="10px";
 
     let keyboard = document.getElementById('keyboard-container');

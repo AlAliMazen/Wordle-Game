@@ -94,13 +94,11 @@ ol ,ul{
 }
 
 .letter-squar{
-    min-width: 60px;
-    min-height: 60px;
-    margin: 5px auto;
-    padding-top: 5px;
+    width: 50px;
+    height: 50px;
     border: 1px solid #118AB2;
     border-radius: 5px;
-    font-size: 2.1rem;
+    font-size: 2rem;
     font-family: 'Noto Sans', sans-serif;
     font-weight: bolder;
     text-align: center;
