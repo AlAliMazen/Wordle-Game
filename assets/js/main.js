@@ -86,6 +86,8 @@ function checkGuessedWord(usrWord) {
     debugger;
     if (usrWord.length === 5) {
         if (usrWord === randomWord) {
+            compareWords(usrWord);
+            expectedWordsArr.push(usrWord);
             window.alert("Hooray, you have guessed the right word");
         } else {
             if (rowIndex > 5) {
