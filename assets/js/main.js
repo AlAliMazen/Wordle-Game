@@ -62,7 +62,7 @@ function hideInstructions() {
     let keyboard = document.getElementById('keyboard-container');
     keyboard.style.display = 'flex';
     keyboard.style.flexDirection = 'column';
-    keyboard.style.justifyContent = 'space-between';
+    keyboard.style.justifyContent = 'center';
     keyboard.style.alignItems = 'center';
 
     let howToPlaySection = document.getElementById('game-instructions');

@@ -111,16 +111,40 @@ ol ,ul{
     width: 95%;
     margin: 5px auto;
     display: none;
-    gap: 5px;
+    gap: 1px;
     position: absolute;
-    bottom: 50px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #06D6A0;
 }
+
+.keyboard-first-row,
+.keyboard-second-row,
+.keyboard-third-row
+{
+    width: 95%;
+    margin: 1px auto;
+    display: flex;
+    justify-content: center;
+    align-items:center
+}
+
+.keyboard-second-row {
+    flex-grow: 2;
+    flex-basis: auto;
+    justify-content: center;
+}
+
 .key{
     text-transform: uppercase;
-    flex-grow: 1;
-    margin: 2px;
-    padding: 5px;
+    margin: .5px;
+    padding: 3px;
     font-family: 'Noto Sans', sans-serif;
     border-radius: 5px;
     font-size: 1rem;
+    flex-grow: 2;
 }
+
+
+
