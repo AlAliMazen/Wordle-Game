@@ -26,6 +26,10 @@ function keyboardvalues(arr) {
 }
 keyboardvalues(keyboardBtns);
 
+//Default both submit and delete btns should be disabled
+document.getElementById("submit-btn").disabled=true;
+document.getElementById("del-btn").disabled=true;
+
 
 function showInstructions() {
     let controllers = document.getElementById('controllers');
@@ -70,8 +74,10 @@ function insertLetter(usrTypedLtr) {
     expectedWord += usrTypedLtr;
     if(expectedWord.length<5){
         document.getElementById("submit-btn").disabled=true;
+        //delete btn should be aciavted if user word is 1 letter long
+        document.getElementById("del-btn").disabled=false;
     }else{
-        document.getElementById("submit-btn").disabled=false;
+        document.getElementById("submit-btn").disabled=false;       
     }
     emptyLetterBx++;
 }
@@ -93,6 +99,8 @@ function checkGuessedWord(usrWord) {
         expectedWordsArr.push(usrWord);
         expectedWord='';
         rowIndex++;
+        document.getElementById("submit-btn").disabled=true;
+        document.getElementById("del-btn").disabled=true;
         if(rowIndex>5){
             window.alert("Game over! right word is: "+randomWord)
         }
@@ -156,9 +164,26 @@ function giveColor(word, index, colorIndex) {
     }
 }
 
-//function to remove last input letter from the row (we have 6 rows )
+/**
+ * 
+ * @param {remove last letter from typed word and decrease the empty index tracker} expectedWord 
+ */
 function removeLastInput(expectedWord) {
+    debugger;
+    if(expectedWord.length>0){
+        let tmpWord=expectedWord.slice(0,-1);
+        emptyLetterBx--;
+        if(tmpWord.length===0){
+            document.getElementById("del-btn").disabled=true;
+        }
+        //remove from UI
+        ltrsSquareArr[emptyLetterBx].textContent = "";
+        return tmpWord;
+    }else{
+        window.alert("There is no more letters in the current row to remove!");
+    }
 
+    
 }
 
 //getting user input 
@@ -174,6 +199,7 @@ function getUsrInput(pressedKey) {
         checkGuessedWord(expectedWord);
     } else {
         //remove last letter 
-        removeLastInput(expectedWord);
+        expectedWord = removeLastInput(expectedWord);
+        console.log(expectedWord);
     }
 }
