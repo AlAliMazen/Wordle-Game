@@ -112,10 +112,7 @@ ol ,ul{
     max-width: 88%;
     max-height: 150px;
     margin: 10px auto;
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    justify-items: center;
+    display: none;
     
 
 }
@@ -179,5 +176,18 @@ ol ,ul{
     flex-grow: 2;
 }
 
+/* Media quiries section for larger screens*/
+@media screen and (min-width:375px) {
+    
+}
+
+@media screen and (min-width:768px) {
+    
+}
+
+
+@media screen and (min-width:992px) {
+    
+}
 
 

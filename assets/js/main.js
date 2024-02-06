@@ -44,6 +44,9 @@ function showInstructions() {
     let gameBoard = document.getElementById('game-board');
     gameBoard.style.display = 'none';
 
+    let scoringSection=document.getElementById('score-container');
+    scoringSection.style.display='none';
+
     let keyboard = document.getElementById('keyboard-container');
     keyboard.style.display = 'none';
 }
@@ -60,7 +63,12 @@ function hideInstructions() {
     gameBoard.style.gridTemplateRows = "repeat(6,1fr)";
     gameBoard.style.justifyContent = "center";
     gameBoard.style.justifyItems="center";
-    //gameBoard.style.gridGap="10px";
+
+    let scoringSection=document.getElementById('score-container');
+    scoringSection.style.display='flex';
+    scoringSection.style.flexDirection = 'column';
+    scoringSection.style.justifyContent = 'center';
+    scoringSection.style.alignItems = 'center';
 
     let keyboard = document.getElementById('keyboard-container');
     keyboard.style.display = 'flex';
