@@ -88,14 +88,15 @@ ol ,ul{
     display: none;
     margin:5px auto;
     padding: 5px;
-    border: 1px solid red;
     width: 95%;
+    border-radius: 10px;
     box-shadow: 5px 5px 10px #118AB2;
 }
 
 .letter-squar{
     width: 50px;
     height: 50px;
+    margin: 1px;
     border: 1px solid #118AB2;
     border-radius: 5px;
     font-size: 2rem;
@@ -149,7 +150,6 @@ ol ,ul{
     bottom: 0;
     right: 0;
     left: 0;
-    background-color: #06D6A0;
 }
 
 .keyboard-first-row,
