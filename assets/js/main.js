@@ -87,6 +87,9 @@ function hideInstructions() {
 }
 
 function insertLetter(usrTypedLtr) {
+    if(expectedWord.length===5){
+        return;
+    }
     ltrsSquareArr[emptyLetterBx].textContent = usrTypedLtr;
     expectedWord += usrTypedLtr;
     if(expectedWord.length<5){
