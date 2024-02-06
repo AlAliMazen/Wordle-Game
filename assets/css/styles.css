@@ -105,7 +105,41 @@ ol ,ul{
     text-transform: uppercase;
     vertical-align: middle;
 }
+#score-container{
+    
+    border-radius: 10px;
+    max-width: 88%;
+    max-height: 150px;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-items: center;
+    
 
+}
+.scoring-info{
+    font-family: 'Noto Sans', sans-serif;
+    color:#073B4C;
+    margin: 5px;
+    padding: 2px;
+    text-align: center;
+}
+.scoring-info>h2{
+    font-size: 1.4rem;
+}
+
+.paly-again-btn{
+    font-family: 'Noto Sans', sans-serif;
+    color:#073B4C;
+    font-size: 1.2rem;
+    width: 50%;
+    max-height: 50px;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+}
 #keyboard-container{
     width: 95%;
     margin: 5px auto;

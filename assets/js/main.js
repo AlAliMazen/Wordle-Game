@@ -91,7 +91,13 @@ function checkGuessedWord(usrWord) {
         if (usrWord === randomWord) {
             compareWords(usrWord);
             expectedWordsArr.push(usrWord);
-            updateScore(rowIndex);
+            if(rowIndex===0){
+                usrScore+=30;
+                //show play again button
+            }else{
+                updateScore(rowIndex);
+            }
+            writeScore();
             window.alert("Hooray, you have guessed the right word");
         } else {
             if (rowIndex > 5) {
@@ -105,6 +111,7 @@ function checkGuessedWord(usrWord) {
         expectedWordsArr.push(usrWord);
         expectedWord='';
         updateScore(rowIndex);
+        writeScore();
         rowIndex++;
         document.getElementById("submit-btn").disabled=true;
         document.getElementById("del-btn").disabled=true;
@@ -136,6 +143,7 @@ function compareWords(usrWord) {
             giveColor(usrWord, i, 0);
             //right letter and right position
             usrScore+=20;
+            writeScore();
         } else {
             if (randomWord.includes(usrWord[i])) {
                 //style it as yellow because it is at wrong position
@@ -144,6 +152,7 @@ function compareWords(usrWord) {
 
                 //right letter but wrong position
                 usrScore+=10;
+                writeScore();
             } else {
                 //style it as gray because it is at wrong position
                 ltrsSquareArr[letterPosition+i].style.backgroundColor = "#b2b0b0";
@@ -203,7 +212,7 @@ function removeLastInput(expectedWord) {
  */
 function updateScore(indx){
     switch(indx){
-        case 0: usrScore+=30;
+        case 0: usrScore-=5;
         break;
         case 1: usrScore-=10;
         break;
@@ -218,8 +227,9 @@ function updateScore(indx){
     }
 }
 
-function getScore(){
-    return usrScore;
+function writeScore(){
+    let scoreHTML=document.getElementById('score');
+    scoreHTML.innerHTML=usrScore+ " points";
 }
 //getting user input 
 function getUsrInput(pressedKey) {
