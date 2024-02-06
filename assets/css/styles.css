@@ -142,6 +142,7 @@ ol ,ul{
     width: 95%;
     margin: 5px auto;
     display: none;
+    font-family: 'Noto Sans', sans-serif;
     gap: 1px;
     position: absolute;
     bottom: 0;
@@ -178,16 +179,96 @@ ol ,ul{
 
 /* Media quiries section for larger screens*/
 @media screen and (min-width:375px) {
-    
+    #game-instructions{
+        background-color: #06D6A0 ;
+        margin: 10px;
+        padding: 0;
+    }
+
+    .How-to-play-container{
+        width: 80%;
+        font-size: 1.4rem;
+    }
+    #game-board{
+        padding: 5px;
+        width: 90%;
+    }
+
+    .letter-squar{
+        width: 60px;
+        margin: 3px;
+        border: 1px solid #118AB2;
+        font-family: 'Noto Sans', sans-serif;
+    }
+    #keyboard-container{
+        width: 95%;
+        margin: 10px auto;
+        gap: 2px;
+        position: absolute;
+        font-family: 'Noto Sans', sans-serif;
+        bottom: 50px;
+    }
+
 }
 
 @media screen and (min-width:768px) {
-    
+    #game-instructions{
+        background-color: #06D6A0 ;
+        margin: 50px;
+    }
+
+    .How-to-play-container{
+        width: 70%;
+        font-size: 1.4rem;
+    }
+
+    #game-board{
+        padding: 5px;
+        max-width: 50%;
+    }
+
+    .letter-squar{
+        width: 70px;
+        height: 70px;
+        margin: 3px;
+        border: 1px solid #118AB2;
+        font-family: 'Noto Sans', sans-serif;
+    }
+    #play-again-btn{
+        width: 20%;
+    }
 }
 
 
 @media screen and (min-width:992px) {
-    
+    #controllers{
+        width: 30%;
+    }
+    .How-to-play-container{
+        width: 80%;
+    }
+
+    #game-board{
+        padding: 5px;
+        width:30%;
+    }
+
+    .letter-squar{
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 3rem;
+    }
+    #keyboard-container{
+        width: 60%;
+        gap: 5px;
+        bottom: 0;
+    }
+    .key{
+        font-size: 1.5rem;
+    }
+    #play-again-btn{
+        width: 20%;
+    }
+
 }
 
 
