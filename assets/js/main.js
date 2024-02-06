@@ -99,6 +99,7 @@ function checkGuessedWord(usrWord) {
             }
             writeScore();
             window.alert("Hooray, you have guessed the right word");
+            return;
         } else {
             if (rowIndex > 5) {
                 window.alert("Game over ! right word is: " + randomWord)
