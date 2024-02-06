@@ -8,7 +8,7 @@
  */
 
 let emptyLetterBx = 0;
-let letter;
+let letter='';
 let expectedWord = '';
 let expectedWordsArr = [];  //should only have 6 words
 let rowIndex = 0;          //to know which word at which index check
@@ -93,22 +93,16 @@ function checkGuessedWord(usrWord) {
             expectedWordsArr.push(usrWord);
             if(rowIndex===0){
                 usrScore+=30;
-                //show play again button
             }else{
                 updateScore(rowIndex);
             }
             writeScore();
+            //show play again button
+            document.getElementById("play-again-btn").style.display='block';
             window.alert("Hooray, you have guessed the right word");
-            
-            
             return;
         } else {
-            if (rowIndex > 5) {
-                window.alert("Game over ! right word is: " + randomWord)
-            } else {
-                //call a function to keep readability 
-                compareWords(usrWord);
-            }
+            compareWords(usrWord);
         }
         //add expectedWord to the array, reset the expectedWord and move currentIndex to the second row
         expectedWordsArr.push(usrWord);
@@ -119,11 +113,12 @@ function checkGuessedWord(usrWord) {
         document.getElementById("submit-btn").disabled=true;
         document.getElementById("del-btn").disabled=true;
         if(rowIndex>5){
-            window.alert("Game over! right word is: "+randomWord)
+            //show play again btn
+            document.getElementById("play-again-btn").style.display='block';
+            window.alert("Game over ! right word is: " + randomWord);
+            return;
         }
-    } else {
-        window.alert("Word must have 5 letters to be submitted")
-    }
+    } 
 }
 /**
  * 
@@ -182,7 +177,7 @@ function giveColor(word, index, colorIndex) {
                 break;
             case 2: keyboardBtns[position].style.backgroundColor = "#b2b0b0";
                 break;
-                default:
+            default:
                     window.alert("wrong index for coloring");
         }
     }
@@ -232,7 +227,41 @@ function updateScore(indx){
 
 function writeScore(){
     let scoreHTML=document.getElementById('score');
-    scoreHTML.innerHTML=usrScore+ " points";
+    if(usrScore!==0){
+        scoreHTML.innerHTML=usrScore+ " points";
+        return;
+    }else{
+        scoreHTML.innerHTML=usrScore;
+    }
+    
+}
+/**
+ * reset all the variables to its default and start new game
+ */
+function playAgain(){
+    emptyLetterBx = 0;
+    letter='';
+    expectedWord = '';
+    expectedWordsArr = [];  //should only have 6 words
+    rowIndex = 0;          //to know which word at which index check
+    ltrsSquareArr = document.querySelectorAll(".letter-squar");
+    keyboardBtns = document.querySelectorAll(".key");
+    
+    for(let i=0;i<ltrsSquareArr.length;i++){
+        ltrsSquareArr[i].textContent="";
+        ltrsSquareArr[i].style.backgroundColor="#ffffff";
+    }
+    for(let i=0;i<keyboardBtns.length;i++){
+        keyboardBtns[i].style.backgroundColor="#ffffff";
+    }
+    usrScore=0;
+    writeScore();
+
+    document.getElementById("submit-btn").disabled=true;
+    document.getElementById("del-btn").disabled=true;
+    document.getElementById("play-again-btn").style.display="none";
+
+
 }
 //getting user input 
 function getUsrInput(pressedKey) {
