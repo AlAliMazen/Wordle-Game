@@ -17,6 +17,9 @@ let keyboardBtns = document.querySelectorAll(".key");
 let keyboardBtnsTxt = [];
 let randomWord = "apply";
 
+ //Scoring right letter + right position = 20 points, right leter and wrong position =10, every crow is -5 
+let usrScore=0;    
+
 
 //get text vlaues from the NodeList of querySelector
 function keyboardvalues(arr) {
@@ -83,11 +86,12 @@ function insertLetter(usrTypedLtr) {
 }
 
 function checkGuessedWord(usrWord) {
-    debugger;
+    
     if (usrWord.length === 5) {
         if (usrWord === randomWord) {
             compareWords(usrWord);
             expectedWordsArr.push(usrWord);
+            updateScore(rowIndex);
             window.alert("Hooray, you have guessed the right word");
         } else {
             if (rowIndex > 5) {
@@ -100,6 +104,7 @@ function checkGuessedWord(usrWord) {
         //add expectedWord to the array, reset the expectedWord and move currentIndex to the second row
         expectedWordsArr.push(usrWord);
         expectedWord='';
+        updateScore(rowIndex);
         rowIndex++;
         document.getElementById("submit-btn").disabled=true;
         document.getElementById("del-btn").disabled=true;
@@ -129,11 +134,16 @@ function compareWords(usrWord) {
             //style letter in letter box and keyboard green background
             ltrsSquareArr[letterPosition+i].style.backgroundColor = "#06D6A0";
             giveColor(usrWord, i, 0);
+            //right letter and right position
+            usrScore+=20;
         } else {
             if (randomWord.includes(usrWord[i])) {
                 //style it as yellow because it is at wrong position
                 ltrsSquareArr[letterPosition+i].style.backgroundColor = "#FFD166";
                 giveColor(usrWord, i, 1);
+
+                //right letter but wrong position
+                usrScore+=10;
             } else {
                 //style it as gray because it is at wrong position
                 ltrsSquareArr[letterPosition+i].style.backgroundColor = "#b2b0b0";
@@ -171,7 +181,7 @@ function giveColor(word, index, colorIndex) {
  * @param {remove last letter from typed word and decrease the empty index tracker} expectedWord 
  */
 function removeLastInput(expectedWord) {
-    debugger;
+    
     if(expectedWord.length>0){
         let tmpWord=expectedWord.slice(0,-1);
         emptyLetterBx--;
@@ -187,7 +197,30 @@ function removeLastInput(expectedWord) {
 
     
 }
+/**
+ * 
+ * @param {row index to see how many tries and decrease the score} indx 
+ */
+function updateScore(indx){
+    switch(indx){
+        case 0: usrScore+=30;
+        break;
+        case 1: usrScore-=10;
+        break;
+        case 2: usrScore-=15;
+        break;
+        case 3: usrScore-=20;
+        break;
+        case 4: usrScore-=25;
+        break;
+        case 5: usrScore-=30;
+        break;
+    }
+}
 
+function getScore(){
+    return usrScore;
+}
 //getting user input 
 function getUsrInput(pressedKey) {
     letter = pressedKey.textContent;
