@@ -7,6 +7,9 @@
  * 
  */
 
+//importing the words list from other js file
+//import { WORDS } from "./words.js";
+
 let emptyLetterBx = 0;
 let letter='';
 let expectedWord = '';
@@ -15,11 +18,14 @@ let rowIndex = 0;          //to know which word at which index check
 let ltrsSquareArr = document.querySelectorAll(".letter-squar");
 let keyboardBtns = document.querySelectorAll(".key");
 let keyboardBtnsTxt = [];
+//const RANDOMWORDSELECTION=require('./words.js')
 let randomWord = "apply";
 
  //Scoring right letter + right position = 20 points, right leter and wrong position =10, every crow is -5 
 let usrScore=0;    
 
+
+//randomWord=RANDOMWORDSELECTION.getRandomWord();
 
 //get text vlaues from the NodeList of querySelector
 function keyboardvalues(arr) {
