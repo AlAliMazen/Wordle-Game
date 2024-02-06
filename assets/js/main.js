@@ -58,8 +58,8 @@ function hideInstructions() {
     gameBoard.style.display = 'grid';
     gameBoard.style.gridTemplateColumns = "repeat(5,1fr)";
     gameBoard.style.gridTemplateRows = "repeat(6,1fr)";
-    gameBoard.style.justifyContent = "space-around";
-    gameBoard.style.justifyItems="stretch";
+    gameBoard.style.justifyContent = "center";
+    gameBoard.style.justifyItems="center";
     //gameBoard.style.gridGap="10px";
 
     let keyboard = document.getElementById('keyboard-container');
