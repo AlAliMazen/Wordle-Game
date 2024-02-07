@@ -119,7 +119,7 @@ function checkGuessedWord(usrWord) {
             compareWords(usrWord);
             expectedWordsArr.push(usrWord);
             if(rowIndex===0){
-                usrScore+=30;
+                usrScore+=105;
             }else{
                 updateScore(rowIndex);
             }
