@@ -1,4 +1,4 @@
-export const WORDS = [
+const WORDS = [
     'which',
     'there',
     'their',
@@ -5756,16 +5756,13 @@ export const WORDS = [
     'rumba',
     'biffy',
     'pupal',
-  ]
+  ];
 
-  /*
-  //get random word from word list
+  /**
+   * 
+   * @returns randomly selected word
+   */
 function getRandomWord(){
     let randomSelection=WORDS[Math.floor(Math.random() * WORDS.length+1)];
-    console.log("Random word is: "+randomWord);
     return randomSelection;
 }
-
-module.exports = {
-    getRandomWord
-}*/

@@ -6,10 +6,6 @@
  * 4- index of available space to insert the letter at the right place
  * 
  */
-
-//importing the words list from other js file
-//import { WORDS } from "./words.js";
-
 let emptyLetterBx = 0;
 let letter='';
 let expectedWord = '';
@@ -18,14 +14,25 @@ let rowIndex = 0;          //to know which word at which index check
 let ltrsSquareArr = document.querySelectorAll(".letter-squar");
 let keyboardBtns = document.querySelectorAll(".key");
 let keyboardBtnsTxt = [];
-//const RANDOMWORDSELECTION=require('./words.js')
-let randomWord = "apply";
+let randomWord = "";
+let randomWordsArr=[];
 
  //Scoring right letter + right position = 20 points, right leter and wrong position =10, every crow is -5 
 let usrScore=0;    
 
 
-//randomWord=RANDOMWORDSELECTION.getRandomWord();
+//get random word from the other JS file 
+document.onreadystatechange = function () {
+    let state = document.readyState;
+    if (state == 'complete') {
+        do{
+            randomWord = getRandomWord();
+        }
+        while(randomWordsArr.includes(randomWord))
+        randomWordsArr.push(randomWord);
+        console.log("Random word is: "+randomWord);
+    }
+};
 
 //get text vlaues from the NodeList of querySelector
 function keyboardvalues(arr) {
@@ -87,9 +94,12 @@ function hideInstructions() {
 }
 
 function insertLetter(usrTypedLtr) {
+    //to stop user from inserting more than 5 letters at each row wither submit or delete
     if(expectedWord.length===5){
         return;
     }
+
+    //when inserted word is still less than 5;
     ltrsSquareArr[emptyLetterBx].textContent = usrTypedLtr;
     expectedWord += usrTypedLtr;
     if(expectedWord.length<5){
@@ -278,7 +288,16 @@ function playAgain(){
     document.getElementById("del-btn").disabled=true;
     document.getElementById("play-again-btn").style.display="none";
 
-
+    //get random word from the other JS file 
+    debugger;
+    do{
+        randomWord = getRandomWord();
+    }
+    while(randomWordsArr.includes(randomWord))
+    randomWordsArr.push(randomWord);
+    console.log("Random word is: "+randomWord);
+        
+    
 }
 //getting user input 
 function getUsrInput(pressedKey) {
