@@ -195,6 +195,7 @@ ol ,ul{
     border: 1px solid #073B4C;
     color: #073B4C;
     font-weight: bolder;
+    background-color: #ffffff;
 }
 .key:hover{
     border: 1px solid #06D6A0;
