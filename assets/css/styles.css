@@ -1,33 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     font-family: 'Noto Sans', sans-serif;
     background-color: #ebebeb;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-header{
+
+header {
     text-align: center;
     margin: 2px;
     padding: 2px;
     font-family: inherit;
 }
-#title{
-    color:#073B4C
 
+#title {
+    color: #073B4C
 }
-header> hr{
+
+header>hr {
     height: 3px;
 }
 
-#controllers{
+.noscript-notification {
+    padding: 10px;
+    margin: 20px auto;
+    font-family: 'Noto Sans', sans-serif;
+    text-align: center;
+    font-size: 16px;
+    color: #073B4C;
+    background-color: #06D6A0;
+    border: 1px solid #073B4C;   
+}
+
+#controllers {
     margin: 5px auto;
     display: none;
     border: 1px solid #06D6A0;
@@ -36,7 +50,7 @@ header> hr{
 
 }
 
-#controllers div i{
+#controllers div i {
     padding: 5px;
     font-size: 1.5rem;
     color: #073B4C;
@@ -47,8 +61,8 @@ header> hr{
     display: none;
 }
 
-#game-instructions{
-    background-color: #06D6A0 ;
+#game-instructions {
+    background-color: #06D6A0;
     width: 90%;
     margin: 10px auto;
     font-size: 1.3rem;
@@ -56,10 +70,12 @@ header> hr{
     padding: 5px;
     border-radius: 10px;
 }
-.txt-center{
+
+.txt-center {
     text-align: center;
 }
-.How-to-play-container{
+
+.How-to-play-container {
     display: flex;
     flex-direction: column;
     justify-items: flex-start;
@@ -72,16 +88,19 @@ header> hr{
 }
 
 .How-to-play-container ol li,
-.How-to-play-container ul li{
+.How-to-play-container ul li {
     margin: 2px;
     padding: 2px;
 }
-ol ,ul{
+
+ol,
+ul {
     margin-top: 2px;
     margin-bottom: 2px;
     color: #073B4C;
 }
-.ok-btn{
+
+.ok-btn {
     border-radius: 10px;
     font-family: inherit;
     margin: 15px;
@@ -91,23 +110,23 @@ ol ,ul{
     font-size: 1.4rem;
     color: #073B4C;
     border: 2px solid #073B4C;
-    background-color:#FFD166 ;
+    background-color: #FFD166;
 }
 
 
 
 
 /*game board should be grid*/
-#game-board{
+#game-board {
     display: none;
-    margin:5px auto;
+    margin: 5px auto;
     padding: 5px;
     max-width: calc(100vw/1.1);
     border-radius: 10px;
     box-shadow: 5px 5px 10px #118AB2;
 }
 
-.letter-squar{
+.letter-squar {
     width: calc(100vw/6);
     height: calc(100vh/15);
     margin: 1px;
@@ -124,27 +143,30 @@ ol ,ul{
     flex-grow: 1;
 
 }
-#score-container{
+
+#score-container {
     border-radius: 10px;
     max-width: 88%;
     max-height: 150px;
     margin: 10px auto;
     display: none;
 }
-.scoring-info{
+
+.scoring-info {
     font-family: 'Noto Sans', sans-serif;
-    color:#073B4C;
+    color: #073B4C;
     margin: 5px;
     padding: 2px;
     text-align: center;
 }
-.scoring-info>h2{
+
+.scoring-info>h2 {
     font-size: 1.4rem;
 }
 
-#play-again-btn{
+#play-again-btn {
     font-family: 'Noto Sans', sans-serif;
-    color:#073B4C;
+    color: #073B4C;
     font-size: 90%;
     width: 50%;
     max-height: 50px;
@@ -155,12 +177,15 @@ ol ,ul{
     border: 2px solid #073B4C;
 
 }
-#play-again-btn:hover,.ok-btn:hover{
+
+#play-again-btn:hover,
+.ok-btn:hover {
     color: #FFD166;
     border: 2px solid #FFD166;
-    background-color:#073B4C ;
+    background-color: #073B4C;
 }
-#keyboard-container{
+
+#keyboard-container {
     width: 95%;
     margin: 5px auto;
     display: none;
@@ -174,13 +199,12 @@ ol ,ul{
 
 .keyboard-first-row,
 .keyboard-second-row,
-.keyboard-third-row
-{
+.keyboard-third-row {
     width: 95%;
     margin: 1px auto;
     display: flex;
     justify-content: center;
-    align-items:center
+    align-items: center
 }
 
 .keyboard-second-row {
@@ -189,7 +213,7 @@ ol ,ul{
     justify-content: center;
 }
 
-.key{
+.key {
     text-transform: uppercase;
     margin: .5px;
     padding: 3px;
@@ -202,29 +226,31 @@ ol ,ul{
     font-weight: bolder;
     background-color: #ffffff;
 }
-.key:hover{
+
+.key:hover {
     border: 1px solid #06D6A0;
     color: #118AB2;
 }
 
 /* Media quiries section for larger screens*/
 @media screen and (min-width:375px) {
-    #game-instructions{
-        background-color: #06D6A0 ;
+    #game-instructions {
+        background-color: #06D6A0;
         margin: 10px auto;
         padding: 0;
     }
 
-    .How-to-play-container{
+    .How-to-play-container {
         width: 80%;
         font-size: 1.4rem;
     }
-    #game-board{
+
+    #game-board {
         padding: 5px;
         width: calc(100vw/1.2);
     }
 
-    .letter-squar{
+    .letter-squar {
         width: calc(100vw/7);
         height: calc(100vh/20);
         margin: 3px;
@@ -232,7 +258,8 @@ ol ,ul{
         font-size: 200%;
         font-family: 'Noto Sans', sans-serif;
     }
-    #keyboard-container{
+
+    #keyboard-container {
         width: 95%;
         margin: 10px auto;
         gap: 2px;
@@ -243,23 +270,23 @@ ol ,ul{
 }
 
 @media screen and (min-width:768px) {
-    #game-instructions{
-        background-color: #06D6A0 ;
+    #game-instructions {
+        background-color: #06D6A0;
         margin: 50px auto;
         width: 65%;
     }
 
-    .How-to-play-container{
+    .How-to-play-container {
         width: 70%;
         font-size: 1.4rem;
     }
 
-    #game-board{
+    #game-board {
         padding: 5px;
         max-width: calc(100vw/1.1);
     }
 
-    .letter-squar{
+    .letter-squar {
         width: calc(100vw/7);
         height: calc(100vh/15);
         margin: 3px;
@@ -267,36 +294,40 @@ ol ,ul{
         font-size: 300%;
         font-family: 'Noto Sans', sans-serif;
     }
-    #play-again-btn{
+
+    #play-again-btn {
         width: 20%;
     }
 }
 
 
 @media screen and (min-width:992px) {
-    .ok-btn{
+    .ok-btn {
         width: 100px;
         margin: 15px auto;
     }
-    #controllers{
+
+    #controllers {
         width: 30%;
     }
-    .How-to-play-container{
+
+    .How-to-play-container {
         width: 80%;
     }
 
-    #game-board{
+    #game-board {
         padding: 5px;
-        max-width:40%;
+        max-width: 40%;
     }
 
-    .letter-squar{
+    .letter-squar {
         width: calc(100vw/14);
         height: calc(100vh/15);
         font-family: 'Noto Sans', sans-serif;
         font-size: 1.5rem;
     }
-    #keyboard-container{
+
+    #keyboard-container {
         width: 60%;
         gap: 5px;
         position: absolute;
@@ -304,35 +335,41 @@ ol ,ul{
         right: 0;
         bottom: 5px;
     }
-    .key{
+
+    .key {
         font-size: 100%;
     }
-    #play-again-btn{
+
+    #play-again-btn {
         width: 20%;
     }
 
 }
 
-@media screen and (min-width:1024px){
-    #controllers{
+@media screen and (min-width:1024px) {
+    #controllers {
         max-width: 300px;
     }
-    #game-board{
+
+    #game-board {
         padding: 5px;
         max-width: 300px;
         max-height: 400px
     }
-    .letter-squar{
+
+    .letter-squar {
         width: 50px;
         max-height: 50px;
         font-size: 150%;
     }
-    #play-again-btn{
+
+    #play-again-btn {
         width: 15%;
         margin: 5px auto;
         padding: 2px;
     }
-    #keyboard-container{
+
+    #keyboard-container {
         width: 60%;
         gap: 5px;
         position: absolute;
@@ -340,11 +377,10 @@ ol ,ul{
         right: 0;
         bottom: 10px;
     }
-    .key{
+
+    .key {
         max-width: 100px;
         max-height: 300px;
     }
-    
+
 }
-
-
