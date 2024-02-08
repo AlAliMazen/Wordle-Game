@@ -22,7 +22,7 @@ let usrScore = 0;
 
 //Add music varaibles 
 let bgMusic = document.getElementById('bg-music');
-bgMusic.volume = 0.2;
+bgMusic.volume = 0.1;//start up volumn regardless the device 
 bgMusic.loop = true;
 let soundOn = false;
 
@@ -35,7 +35,6 @@ document.onreadystatechange = function () {
         }
         while (randomWordsArr.includes(randomWord))
         randomWordsArr.push(randomWord);
-        console.log("Random word is: " + randomWord);
     }
 };
 
@@ -51,10 +50,8 @@ keyboardvalues(keyboardBtns);
  * Toggle on and off background music
  */
 function musicControl() {
-    debugger;
     soundOn = !soundOn;
     if (soundOn) {
-        debugger;
         bgMusic.play();
         document.getElementById("music-on").classList.add('hide');
         document.getElementById("music-off").classList.remove('hide');
@@ -337,21 +334,16 @@ function playAgain() {
     document.getElementById("del-btn").disabled = true;
     document.getElementById("play-again-btn").style.display = "none";
 
-    //get random word from the other JS file 
-    debugger;
+    //get random word from the other JS file
     do {
         randomWord = getRandomWord();
     }
     while (randomWordsArr.includes(randomWord))
     randomWordsArr.push(randomWord);
-    console.log("Random word is: " + randomWord);
-
-
 }
 //getting user input 
 function getUsrInput(pressedKey) {
     letter = pressedKey.textContent;
-    console.log(letter.toUpperCase());
 
     //call function to insert letter if letter not submit or Del
     if (letter !== "Submit" && letter !== "Del") {
@@ -362,6 +354,5 @@ function getUsrInput(pressedKey) {
     } else {
         //remove last letter 
         expectedWord = removeLastInput(expectedWord);
-        console.log(expectedWord);
     }
 }
