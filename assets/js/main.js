@@ -7,7 +7,7 @@
  * 
  */
 let emptyLetterBx = 0;
-let letter='';
+let letter = '';
 let expectedWord = '';
 let expectedWordsArr = [];  //should only have 6 words
 let rowIndex = 0;          //to know which word at which index check
@@ -15,22 +15,22 @@ let ltrsSquareArr = document.querySelectorAll(".letter-squar");
 let keyboardBtns = document.querySelectorAll(".key");
 let keyboardBtnsTxt = [];
 let randomWord = "";
-let randomWordsArr=[];
+let randomWordsArr = [];
 
- //Scoring right letter + right position = 20 points, right leter and wrong position =10, every crow is -5 
-let usrScore=0;    
+//Scoring right letter + right position = 20 points, right leter and wrong position =10, every crow is -5 
+let usrScore = 0;
 
 
 //get random word from the other JS file 
 document.onreadystatechange = function () {
     let state = document.readyState;
     if (state == 'complete') {
-        do{
+        do {
             randomWord = getRandomWord();
         }
-        while(randomWordsArr.includes(randomWord))
+        while (randomWordsArr.includes(randomWord))
         randomWordsArr.push(randomWord);
-        console.log("Random word is: "+randomWord);
+        console.log("Random word is: " + randomWord);
     }
 };
 
@@ -43,8 +43,8 @@ function keyboardvalues(arr) {
 keyboardvalues(keyboardBtns);
 
 //Default both submit and delete btns should be disabled
-document.getElementById("submit-btn").disabled=true;
-document.getElementById("del-btn").disabled=true;
+document.getElementById("submit-btn").disabled = true;
+document.getElementById("del-btn").disabled = true;
 
 
 function showInstructions() {
@@ -57,8 +57,8 @@ function showInstructions() {
     let gameBoard = document.getElementById('game-board');
     gameBoard.style.display = 'none';
 
-    let scoringSection=document.getElementById('score-container');
-    scoringSection.style.display='none';
+    let scoringSection = document.getElementById('score-container');
+    scoringSection.style.display = 'none';
 
     let keyboard = document.getElementById('keyboard-container');
     keyboard.style.display = 'none';
@@ -75,10 +75,10 @@ function hideInstructions() {
     gameBoard.style.gridTemplateColumns = "repeat(5,1fr)";
     gameBoard.style.gridTemplateRows = "repeat(6,1fr)";
     gameBoard.style.justifyContent = "center";
-    gameBoard.style.justifyItems="center";
+    gameBoard.style.justifyItems = "center";
 
-    let scoringSection=document.getElementById('score-container');
-    scoringSection.style.display='flex';
+    let scoringSection = document.getElementById('score-container');
+    scoringSection.style.display = 'flex';
     scoringSection.style.flexDirection = 'column';
     scoringSection.style.justifyContent = 'center';
     scoringSection.style.alignItems = 'center';
@@ -95,98 +95,124 @@ function hideInstructions() {
 
 function insertLetter(usrTypedLtr) {
     //to stop user from inserting more than 5 letters at each row wither submit or delete
-    if(expectedWord.length===5){
+    if (expectedWord.length === 5) {
         return;
     }
 
     //when inserted word is still less than 5;
     ltrsSquareArr[emptyLetterBx].textContent = usrTypedLtr;
     expectedWord += usrTypedLtr;
-    if(expectedWord.length<5){
-        document.getElementById("submit-btn").disabled=true;
+    if (expectedWord.length < 5) {
+        document.getElementById("submit-btn").disabled = true;
         //delete btn should be aciavted if user word is 1 letter long
-        document.getElementById("del-btn").disabled=false;
-    }else{
-        document.getElementById("submit-btn").disabled=false;       
+        document.getElementById("del-btn").disabled = false;
+    } else {
+        document.getElementById("submit-btn").disabled = false;
     }
     emptyLetterBx++;
 }
 
 function checkGuessedWord(usrWord) {
-    
+
     if (usrWord.length === 5) {
         if (usrWord === randomWord) {
             compareWords(usrWord);
+            flipRow();
             expectedWordsArr.push(usrWord);
-            if(rowIndex===0){
-                usrScore+=105;
-            }else{
+            if (rowIndex === 0) {
+                usrScore += 105;
+            } else {
                 updateScore(rowIndex);
             }
             writeScore();
             //show play again button
-            document.getElementById("play-again-btn").style.display='block';
+            document.getElementById("play-again-btn").style.display = 'block';
             window.alert("Hooray, you have guessed the right word");
             return;
         } else {
             compareWords(usrWord);
+            flipRow();
         }
         //add expectedWord to the array, reset the expectedWord and move currentIndex to the second row
         expectedWordsArr.push(usrWord);
-        expectedWord='';
+        expectedWord = '';
         updateScore(rowIndex);
         writeScore();
         rowIndex++;
-        document.getElementById("submit-btn").disabled=true;
-        document.getElementById("del-btn").disabled=true;
-        if(rowIndex>5){
+        document.getElementById("submit-btn").disabled = true;
+        document.getElementById("del-btn").disabled = true;
+        if (rowIndex > 5) {
             //show play again btn
-            document.getElementById("play-again-btn").style.display='block';
+            document.getElementById("play-again-btn").style.display = 'block';
             window.alert("Game over ! right word is: " + randomWord);
             return;
         }
-    } 
+    }
 }
 /**
  * 
  * @param {expected user word to start comparing process} usrWord 
  */
 function compareWords(usrWord) {
-    let letterPosition=0;
-    switch(rowIndex){
-        case 0:letterPosition=0;break;
-        case 1:letterPosition=5;break;
-        case 2:letterPosition=10;break;
-        case 3:letterPosition=15;break;
-        case 4:letterPosition=20;break;
-        case 5:letterPosition=25;break;
+    let letterPosition = 0;
+    switch (rowIndex) {
+        case 0: letterPosition = 0; break;
+        case 1: letterPosition = 5; break;
+        case 2: letterPosition = 10; break;
+        case 3: letterPosition = 15; break;
+        case 4: letterPosition = 20; break;
+        case 5: letterPosition = 25; break;
     }
     for (let i = 0; i < usrWord.length; i++) {
         if (usrWord[i] === randomWord[i]) {
             //style letter in letter box and keyboard green background
-            ltrsSquareArr[letterPosition+i].style.backgroundColor = "#06D6A0";
+            ltrsSquareArr[letterPosition + i].style.backgroundColor = "#06D6A0";
             giveColor(usrWord, i, 0);
             //right letter and right position
-            usrScore+=20;
+            usrScore += 20;
             writeScore();
         } else {
             if (randomWord.includes(usrWord[i])) {
                 //style it as yellow because it is at wrong position
-                ltrsSquareArr[letterPosition+i].style.backgroundColor = "#FFD166";
+                ltrsSquareArr[letterPosition + i].style.backgroundColor = "#FFD166";
                 giveColor(usrWord, i, 1);
-
                 //right letter but wrong position
-                usrScore+=10;
+                usrScore += 10;
                 writeScore();
             } else {
                 //style it as gray because it is at wrong position
-                ltrsSquareArr[letterPosition+i].style.backgroundColor = "#b2b0b0";
+                ltrsSquareArr[letterPosition + i].style.backgroundColor = "#b2b0b0";
                 giveColor(usrWord, i, 2);
             }
         }
     }
 }
+/**
+ * after submitting a word, the row should be flipped no X axis
+ */
+function flipRow() {
+    let letterPosition = 0;
+    switch (rowIndex) {
+        case 0: letterPosition = 0; break;
+        case 1: letterPosition = 5; break;
+        case 2: letterPosition = 10; break;
+        case 3: letterPosition = 15; break;
+        case 4: letterPosition = 20; break;
+        case 5: letterPosition = 25; break;
+    }
+    for (let i = 0; i < 5; i++) {
+        ltrsSquareArr[letterPosition + i].style.transition = "transform 2s ease";
 
+
+        //flip 
+        ltrsSquareArr[letterPosition + i].style.transform = "rotateY(90deg)";
+        ltrsSquareArr[letterPosition + i].style.transform = "rotateY(180deg)";
+        ltrsSquareArr[letterPosition + i].style.transform = "rotateY(270deg)";
+        ltrsSquareArr[letterPosition + i].style.transform = "rotateY(360deg)";
+
+
+    }
+}
 /**
  * 
  * @param {user input word} word 
@@ -205,7 +231,7 @@ function giveColor(word, index, colorIndex) {
             case 2: keyboardBtns[position].style.backgroundColor = "#b2b0b0";
                 break;
             default:
-                    window.alert("wrong index for coloring");
+                window.alert("wrong index for coloring");
         }
     }
 }
@@ -215,89 +241,89 @@ function giveColor(word, index, colorIndex) {
  * @param {remove last letter from typed word and decrease the empty index tracker} expectedWord 
  */
 function removeLastInput(expectedWord) {
-    
-    if(expectedWord.length>0){
-        let tmpWord=expectedWord.slice(0,-1);
+
+    if (expectedWord.length > 0) {
+        let tmpWord = expectedWord.slice(0, -1);
         emptyLetterBx--;
-        if(tmpWord.length===0){
-            document.getElementById("del-btn").disabled=true;
+        if (tmpWord.length === 0) {
+            document.getElementById("del-btn").disabled = true;
         }
         //remove from UI
         ltrsSquareArr[emptyLetterBx].textContent = "";
         return tmpWord;
-    }else{
+    } else {
         window.alert("There is no more letters in the current row to remove!");
     }
 
-    
+
 }
 /**
  * 
  * @param {row index to see how many tries and decrease the score} indx 
  */
-function updateScore(indx){
-    switch(indx){
-        case 0: usrScore-=5;
-        break;
-        case 1: usrScore-=10;
-        break;
-        case 2: usrScore-=15;
-        break;
-        case 3: usrScore-=20;
-        break;
-        case 4: usrScore-=25;
-        break;
-        case 5: usrScore-=30;
-        break;
+function updateScore(indx) {
+    switch (indx) {
+        case 0: usrScore -= 5;
+            break;
+        case 1: usrScore -= 10;
+            break;
+        case 2: usrScore -= 15;
+            break;
+        case 3: usrScore -= 20;
+            break;
+        case 4: usrScore -= 25;
+            break;
+        case 5: usrScore -= 30;
+            break;
     }
 }
 
-function writeScore(){
-    let scoreHTML=document.getElementById('score');
-    if(usrScore!==0){
-        scoreHTML.innerHTML=usrScore+ " points";
+function writeScore() {
+    let scoreHTML = document.getElementById('score');
+    if (usrScore !== 0) {
+        scoreHTML.innerHTML = usrScore + " points";
         return;
-    }else{
-        scoreHTML.innerHTML=usrScore;
+    } else {
+        scoreHTML.innerHTML = usrScore;
     }
-    
+
 }
 /**
  * reset all the variables to its default and start new game
  */
-function playAgain(){
+function playAgain() {
     emptyLetterBx = 0;
-    letter='';
+    letter = '';
     expectedWord = '';
     expectedWordsArr = [];  //should only have 6 words
     rowIndex = 0;          //to know which word at which index check
     ltrsSquareArr = document.querySelectorAll(".letter-squar");
     keyboardBtns = document.querySelectorAll(".key");
-    
-    for(let i=0;i<ltrsSquareArr.length;i++){
-        ltrsSquareArr[i].textContent="";
-        ltrsSquareArr[i].style.backgroundColor="#ffffff";
+
+    for (let i = 0; i < ltrsSquareArr.length; i++) {
+        ltrsSquareArr[i].textContent = "";
+        ltrsSquareArr[i].style.backgroundColor = "#ffffff";
     }
-    for(let i=0;i<keyboardBtns.length;i++){
-        keyboardBtns[i].style.backgroundColor="#ffffff";
+    for (let i = 0; i < keyboardBtns.length; i++) {
+        keyboardBtns[i].style.backgroundColor = "#ffffff";
     }
-    usrScore=0;
+    usrScore = 0;
     writeScore();
 
-    document.getElementById("submit-btn").disabled=true;
-    document.getElementById("del-btn").disabled=true;
-    document.getElementById("play-again-btn").style.display="none";
+    document.getElementById("submit-btn").disabled = true;
+    document.getElementById("del-btn").disabled = true;
+    document.getElementById("play-again-btn").style.display = "none";
 
     //get random word from the other JS file 
     debugger;
-    do{
+    do {
         randomWord = getRandomWord();
     }
-    while(randomWordsArr.includes(randomWord))
+    while (randomWordsArr.includes(randomWord))
     randomWordsArr.push(randomWord);
-    console.log("Random word is: "+randomWord);
-        
-    
+    console.log("Random word is: " + randomWord);
+
+
 }
 //getting user input 
 function getUsrInput(pressedKey) {
