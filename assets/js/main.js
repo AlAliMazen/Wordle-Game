@@ -20,6 +20,11 @@ let randomWordsArr = [];
 //Scoring right letter + right position = 20 points, right leter and wrong position =10, every crow is -5 
 let usrScore = 0;
 
+//Add music varaibles 
+let bgMusic = document.getElementById('bg-music');
+bgMusic.volume = 0.2;
+bgMusic.loop = true;
+let soundOn = false;
 
 //get random word from the other JS file 
 document.onreadystatechange = function () {
@@ -41,6 +46,24 @@ function keyboardvalues(arr) {
     }
 }
 keyboardvalues(keyboardBtns);
+
+/**
+ * Toggle on and off background music
+ */
+function musicControl() {
+    debugger;
+    soundOn = !soundOn;
+    if (soundOn) {
+        debugger;
+        bgMusic.play();
+        document.getElementById("music-on").classList.add('hide');
+        document.getElementById("music-off").classList.remove('hide');
+    } else {
+        bgMusic.pause();
+        document.getElementById("music-off").classList.add('hide');
+        document.getElementById("music-on").classList.remove('hide');
+    }
+}
 
 //Default both submit and delete btns should be disabled
 document.getElementById("submit-btn").disabled = true;

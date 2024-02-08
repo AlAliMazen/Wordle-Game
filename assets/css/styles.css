@@ -42,6 +42,11 @@ header> hr{
     color: #073B4C;
 }
 
+/* helper class to hide elements with javascript */
+.hide {
+    display: none;
+}
+
 #game-instructions{
     background-color: #06D6A0 ;
     width: 90%;
