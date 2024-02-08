@@ -16,6 +16,7 @@ let keyboardBtns = document.querySelectorAll(".key");
 let keyboardBtnsTxt = [];
 let randomWord = "";
 let randomWordsArr = [];
+let showWarning = false;
 
 //Scoring right letter + right position = 20 points, right leter and wrong position =10, every crow is -5 
 let usrScore = 0;
@@ -26,9 +27,33 @@ bgMusic.volume = 0.1;//start up volumn regardless the device
 bgMusic.loop = true;
 let soundOn = false;
 
+
+//adding resize event to warn user about best possible way to show the UI
+window.onresize = resizeWarning;
+
+/**
+ * if the device dimention doesn't fit the game it will trigger this message
+ */
+function resizeWarning() {
+    if (window.innerWidth < 300) {
+        showWarning = true;
+    } else if (window.innerHeight < 550) {
+        showWarning = true;
+    } else if (window.innerWidth <= 299 && window.innerHeight <= 550) {
+        showWarning = true;
+    }
+
+
+    if (showWarning) {
+       window.alert("Game can't be shown properly due to device dimesnion !");
+    }else{
+        showWarning=false;
+    }
+}
+
 /**
  * used when script loads to get a random 5 letter word
- */ 
+ */
 document.onreadystatechange = function () {
     let state = document.readyState;
     if (state == 'complete') {
