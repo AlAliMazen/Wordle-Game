@@ -26,7 +26,9 @@ bgMusic.volume = 0.1;//start up volumn regardless the device
 bgMusic.loop = true;
 let soundOn = false;
 
-//get random word from the other JS file 
+/**
+ * used when script loads to get a random 5 letter word
+ */ 
 document.onreadystatechange = function () {
     let state = document.readyState;
     if (state == 'complete') {
@@ -38,7 +40,10 @@ document.onreadystatechange = function () {
     }
 };
 
-//get text vlaues from the NodeList of querySelector
+/**
+ * 
+ * @param {get text vlaues from the NodeList of querySelector} arr 
+ */
 function keyboardvalues(arr) {
     for (let i = 0; i < arr.length; i++) {
         keyboardBtnsTxt.push(arr[i].innerHTML);
@@ -66,7 +71,9 @@ function musicControl() {
 document.getElementById("submit-btn").disabled = true;
 document.getElementById("del-btn").disabled = true;
 
-
+/**
+ * shows the how to play mechanism 
+ */
 function showInstructions() {
     let controllers = document.getElementById('controllers');
     controllers.style.display = 'none';
@@ -83,7 +90,9 @@ function showInstructions() {
     let keyboard = document.getElementById('keyboard-container');
     keyboard.style.display = 'none';
 }
-
+/**
+ * hide the instuction and the how to play banner
+ */
 function hideInstructions() {
     let controllers = document.getElementById('controllers');
     controllers.style.display = 'flex';
@@ -112,7 +121,11 @@ function hideInstructions() {
     let howToPlaySection = document.getElementById('game-instructions');
     howToPlaySection.style.display = 'none';
 }
-
+/**
+ * 
+ * @param {writing the user chosen letter to the UI->game board} usrTypedLtr 
+ * @returns 
+ */
 function insertLetter(usrTypedLtr) {
     //to stop user from inserting more than 5 letters at each row wither submit or delete
     if (expectedWord.length === 5) {
@@ -131,7 +144,11 @@ function insertLetter(usrTypedLtr) {
     }
     emptyLetterBx++;
 }
-
+/**
+ * 
+ * @param {whenever the word has 5 letters, it will be checked here} usrWord 
+ * @returns 
+ */
 function checkGuessedWord(usrWord) {
 
     if (usrWord.length === 5) {
@@ -222,15 +239,11 @@ function flipRow() {
     }
     for (let i = 0; i < 5; i++) {
         ltrsSquareArr[letterPosition + i].style.transition = "transform 2s ease";
-
-
         //flip 
         ltrsSquareArr[letterPosition + i].style.transform = "rotateY(90deg)";
         ltrsSquareArr[letterPosition + i].style.transform = "rotateY(180deg)";
         ltrsSquareArr[letterPosition + i].style.transform = "rotateY(270deg)";
         ltrsSquareArr[letterPosition + i].style.transform = "rotateY(360deg)";
-
-
     }
 }
 /**
@@ -297,7 +310,10 @@ function updateScore(indx) {
             break;
     }
 }
-
+/**
+ * 
+ * @returns used to get the final score of the user
+ */
 function writeScore() {
     let scoreHTML = document.getElementById('score');
     if (usrScore !== 0) {
@@ -341,7 +357,10 @@ function playAgain() {
     while (randomWordsArr.includes(randomWord))
     randomWordsArr.push(randomWord);
 }
-//getting user input 
+/**
+ * 
+ * @param {get ltters from UI-Keyboard} pressedKey 
+ */
 function getUsrInput(pressedKey) {
     letter = pressedKey.textContent;
 
