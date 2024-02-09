@@ -366,6 +366,11 @@ function playAgain() {
         ltrsSquareArr[i].style.backgroundColor = "#ffffff";
     }
     for (let i = 0; i < keyboardBtns.length; i++) {
+        keyboardBtns[i].style.transition = "transform 2s ease";
+        keyboardBtns[i].style.transform = "rotateY(90deg)";
+        keyboardBtns[i].style.transform = "rotateY(180deg)";
+        keyboardBtns[i].style.transform = "rotateY(270deg)";
+        keyboardBtns[i].style.transform = "rotateY(360deg)";
         keyboardBtns[i].style.backgroundColor = "#ffffff";
     }
     usrScore = 0;
