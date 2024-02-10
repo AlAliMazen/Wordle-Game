@@ -32,15 +32,15 @@
         <!--controllers infos, music, score ..etc -->
         <div id="controllers">
             <div onclick="showInstructions()"><i class="fa-solid fa-circle-info"></i></div>
-           <!-- music controls -->
-           <div class="container volume-controller">
-            <a  onClick="musicControl();" id="music-on" aria-label="Turn on background music">
-                <i class="fas fa-volume-mute" ></i>
-            </a>
-            <a class="hide" onClick="musicControl();" id="music-off" aria-label="Turn off background music">
-                <i class="fas fa-volume-up" ></i>
-            </a>
-        </div>
+            <!-- music controls -->
+            <div class="container volume-controller">
+                <a onClick="musicControl();" id="music-on" aria-label="Turn on background music">
+                    <i class="fas fa-volume-mute"></i>
+                </a>
+                <a class="hide" onClick="musicControl();" id="music-off" aria-label="Turn off background music">
+                    <i class="fas fa-volume-up"></i>
+                </a>
+            </div>
         </div>
         <!--How to play Note-->
         <section id="game-instructions">
@@ -153,16 +153,16 @@
                 <button id="del-btn" class="key" onclick="getUsrInput(this)">Del</button>
             </div>
             <div>
-                
-               
+
+
             </div>
         </div>
 
     </main>
     <!--Adding font Awesome-->
     <script src="https://kit.fontawesome.com/176b15ee89.js" crossorigin="anonymous"></script>
-     <!-- background musics file-->
-     <audio id="bg-music" src="assets/audio/bg-music-sunset-break-short.wav"></audio>
+    <!-- background musics file-->
+    <audio id="bg-music" src="assets/audio/bg-music-sunset-break-short.wav"></audio>
     <!--linking javascript-->
     <script src="assets/js/words.js"></script>
     <script src="assets/js/main.js"></script>
