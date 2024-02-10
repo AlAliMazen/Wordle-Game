@@ -235,27 +235,39 @@ There aretwo JS files used in this game. Both of them are validated on the follo
 ## Compatibility and Responsive Testing
 🚨**Required** 
 
-1. Visit https://gs.statcounter.com/browser-market-share to figure out the most popular browsers & operating system combos seen across the we for the geographic region, and platoform(s) and screen sizes you expect your users to belong to. 
+1. Checking the [statecounter](https://gs.statcounter.com/browser-market-share) for most common and widely used browsers I decided to have a website that is responsive on these browsers including 
 
-1. Include a sentence about why you chose the combinations you did.
 
-1. Create a table that lists out what devices, browsers, and operating system you tested your application on and a brief description of why you chose the mixture you did. The point is to prove that you looked at the site across various browsers, operating systems, and viewport breakpoints. [markdown table generator](https://www.tablesgenerator.com/markdown_tables)
+|   Web browsers                    | Version
+|-----------------------------------|------------------------|
+| Google Chrome                     |Version 121.0.6167.160  |
+| Safari                            |Version 17.3.1          |
+| Microsoft Edge                    |Version 121.0.2277.112  |
+| Firefox Browser Developer         |Version 123.0b9 (64-bit)|
+| Opera One                         |version: 107.0.5045.15  |
 
-1. if you can't find the brower/device/OS combinations you want on Browserstack with your github student webpack (or you didn't activate that in time), note what you'd ideally test on then what you ended up testing on as a compromise. 
+**Device**
 
-| TOOL / Device                 | BROWSER     | OS         | SCREEN WIDTH  |
-|-------------------------------|-------------|------------|---------------|
-| real phone: motog6            | chrome      | android    | XS 360 x 640  |
-| browser stack: iPhone5s       | safari      | iOs        | XS 320 x 568  |
-| dev tools emulator: pixel 2   | firefox     | android    | SM 411 x 731  |
-| browserstack: iPhone 10x      | Chrome      | iOs        | SM 375 x 812  |
-| browserstack: nexus 7 - vert  | Chrome      | android    | M 600 x 960   |
-| real tablet: ipad mini - vert | safari      | iOs        | M 768 x 1024  |
-| browserstack: nexus 7 - horiz | firefox     | android    | LG 960 x 600  |
-| chrome emulator: ipad - horiz | safari      | iOs        | LG 1024 x 768 |
-| browserstack                  | Chrome      | windows    | XL 1920 x 946 |
-| real computer: mac book pro   | safari 12.1 | Mohave     | XL 1400 x 766 |
-| browserstack                  | IE Edge 88  | windows 10 | XL 1920 x 964 |
+|   Device                    | Version           |        Dimesnion    |
+|-----------------------------|-------------------|---------------------|
+| iPhone 14 Pro Max (real)    | iOS v. 17.2.1     |
+| iPad 4   (real)             | iOS v. 17.2       |
+| iPhone SE                   |                   | 375 x 667
+| iPhone XR                   |                   | 414 x 896
+| iPhone 12 Pro               |                   | 390 x 844
+| Pixel 7                     |                   | 412 x 915
+| Samsung Galaxy              |                   | 360 x 740
+| Samsung Galaxy S20 Ultra    |                   | 412 x 915
+| iPad Mini                   |                   | 768 x 1024
+| iPad Air                    |                   | 820 x 1180
+| ipad Pro                    |                   | 1024 x 1366
+| Surface Pro 7               |                   | 912 x 1368
+| Surface Duo                 |                   | 540 x 920
+| Galaxy Fold                 |                   | 280 x 653
+| Samsung Galaxy A51/71       |                   | 412 x 914
+| Nest Hub Max                |                   | 1280 x 800
+
+
 
 ## Manual Testing
 🚨**Required** 
