@@ -195,15 +195,13 @@ Following screenshot has been don on the following website and it shows no error
 ### HTML Validation
 🚨**Required** 
 
-If you only have one HTML file for your project, you only need to run this once for your deployed url, but if you have different files even for a thankyou or 404, run it by direct input per file or by deployed url per file.
-
-- include a screenshot for each HTML file with the Blue Nu Html checker down to the blue checking complete bit. It's ok to have info and warnings. 
-- You may need a scrolling screenshot to capture this one. I tend to use the [GoFullPage extension in chrome](https://chrome.google.com/webstore/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl):
-
+All html pages included in this game are validated on the following website.
 [HTML Validator](https://validator.w3.org/)
 
 **index.html**
-![img.png](documentation/images/index-html-validation.png)
+
+![Index.html](assets/README-imgs/html-index-validation.png) .
+
 
 **404.html**
 ![img.png](documentation/images/404-html-validation.png)
@@ -225,14 +223,14 @@ If you have tons of warnings about spacing and semicolons, right,click your file
 
 ### Javascript Validation
 🚨**Required** 
-If you chose to store data in a .json file, you should validate it too.
-
-For each file copy the code into the validator site and include a screenshot
-
+There aretwo JS files used in this game. Both of them are validated on the following website and showing no errors
 [JSON validation](https://jsonlint.com/) 
 
-**data.json**
-![img_2.png](img_2.png)
+**main.js**
+![mian-javascript-file](assets/README-imgs/js-main-validation.png)
+
+**words** 
+![list-of-words](assets/README-imgs/js-words-validation.png)
 
 ## Compatibility and Responsive Testing
 🚨**Required** 
