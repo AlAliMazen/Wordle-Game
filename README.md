@@ -15,6 +15,12 @@ If player guessed a right letter at wrong position, the game board square as wil
 
 If player's guess is neither a right letter or at right position, then game board square and the keyboard key will be gray coloured.
 
+Wordle Game is also responsive and load like in the following **am I responsive here** [wordle-Game](https://ui.dev/amiresponsive?url=https://alalimazen.github.io/Wordle-Game/)
+and it looks like ![wordle-game](assets/README-imgs/wordle-game-res-a.png) with how to play-to-play instructions. 
+
+When game starts it looks like following screenshot ![Game-board](assets/README-imgs/wordle.game-res-b.png) .
+
+
 
 ## Live Site
 🚨**Required** 
@@ -125,41 +131,44 @@ tables, accordions, maps, videos, forms with inputs, text areas, select/dropdown
 ## Wireframes
 🚀 **merit & beyond**
 
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in a separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser. 
+Wireframes are done using the Balsamiq software licesned by Code Institute and I have made a wireframe for **desktop** and **mobile devices** and both can be found under the assets/wireframes .
 
-Wireframes can be as simple as a picture of a drawing of how you envisioned laying out the information for you pages in desktop, tablet and mobile views. They are a roadmap and do not have to be 100% accurate of the final product. Or you can use the [Balsamiq](https://code-institute-room.slack.com/archives/C0L316Z96/p1640099614368000) tool that Code Institute provides students access to. 
-
-## mobile wireframes
-🚀 **merit & beyond**
-
-## tablet wireframes
-🚀 **merit & beyond**
-
-## desktop wireframes
-🚀 **merit & beyond**
 
 
 ### Features
 🚨**Required** 
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so and how they tie into  your user stories.
+Right from the beginning when the game loads, it starts by showing user a set of instructions on how ot play and what color has which meaning. After touching or clicking on **OK** button, the game board and the on-screen keyboard  and in the middle there is a scoring calculation tracker. 
 
-## Implemented Features
+### Implemented Features
 🚨**Required** 
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
+- Instruction window: When game load at the first stage, it opens up with a how-to-play instructions. This window is connected to Javascript file through a ducntion responsible to hide this window and show the game UI.
 
-It's easiest to break this section down into the header, footer, and each page/layer of your website. Call out any differences for mobile vs desktop presentations, include a screenshot of the implemented feature.
+- On the top of the gameboard there are two incons on is lillte i circle used to show the instructions and hide the whole game UI elements and hid it again to show the game UI. 
 
-Don't forget your 404 error page.
+- Next to the instructions icon there is a volum icon. When clicked a background music will start playing help player to listen to music while playing. The same icon is also used to pause the backgriund music.
+
+
+- Gamebaord: a grid UI of 5 squares and 6 rows. Whenever player is ready with aguess of a word, player can click on **Submit** key to check the typed word against the random selected word.
+
+- Coloring Gameboard: when letter is at right position, square will be turned into green. When letter is at wrong position but still included in the random word, square will be turned into yellow. When letter is not included in the random word, square will be turned into gray. 
+
+- Play again button: This button is going to be shown only when either play wins the game at what ever row, or when player loses without guessing the right word. **Play again** button is used to reset both game board and the on-screen keyboard. 
+
+- Notifications: There are 3 notification while game is running. First one is when user has guesed the random word using 'window.aler()' built in function. The second notification is when player loses the game, a notification will be shown telling user that game is over and what the random word is. The last notification is shown when the size of the browser or device dimension. 
+
+- On-screen keyboard: The keyboard is used to get the letter into the gameboard squares. The Keyboard get also colored when player has guessed right letter at right position, right letter at wrong position or not included letter to avoid these letter on the next try. 
+
+- Animation of both game board and keyboard: When a word is submitted the row on the gameboard is rotated and gets colored from side of Javascript implemention CSS code. The same animation is applied to the keyboard keys after **play again** button. 
+
+- Scoring: since we have a word of 5 letters, player will get 20 points for each right letter at the right position. Only 10 points for a right letter at the right position. If player gets the right word from the first try, s/he will get 100 point + 105. The 105 is so aggregated the player will lose 5 points for each row (which is considered a try) (5+10+15+20+25+2+30 =105).
+
 
 ## Future Features
 🚀 **merit & beyond**
 
-Use this section to discuss plans for additional features to be implemented in the future
-
-If you end up not developing some features you hoped to implement, you can include those in this section too.
-
+One of the future feature which I would like to implement when completing the database module it to link this game to a central database and add statistics to the game to show results between different player from all over the globe.
 
 ## Testing
 🚨**Required** 
@@ -171,24 +180,17 @@ If this section grows too long, you may want to split it off into a separate fil
 ## Validation Testing
 🚨**Required** 
 
-In this section you should write up any websites you used to validate your code and include screenshots.
 
-**Validation issues are an automatic failure** You should run these about 3 times:
-- when you first deploy your site
-- just when you think you are done testing
-- right before you submit because 😼, ⚽, 🐶 & 👼 can eliminate a closing tag or curly bracket without you noticing.
 
 ### CSS Validation
 🚨**Required** 
 
-If you only have one CSS file used on all pages, you only need to run this once for your deployed url, but if you have different files for different pages, run it by direct input per file.
-
-- include a screenshot for each CSS file which includes the Green no ERRORS bar,  two check marks
-
+Following screenshot has been don on the following website and it shows no errors in the whole page.
 [CSS validator](https://jigsaw.w3.org/css-validator/)
 
-**styles.css**
-![img.png](documentation/images/css-validation.png)
+![Css Validation](assets/README-imgs/css-validation-results.png) .
+
+
 
 ### HTML Validation
 🚨**Required** 
