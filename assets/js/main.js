@@ -35,19 +35,18 @@ window.onresize = resizeWarning;
  * if the device dimention doesn't fit the game it will trigger this message
  */
 function resizeWarning() {
-    if (window.innerWidth < 300) {
+    let warningEmnt=document.getElementById('warning');
+    console.log(warningEmnt.children[0].tagName);
+    if ((window.innerWidth < 300)||(window.innerHeight < 550)||(window.innerWidth <= 299 && window.innerHeight <= 550)) {
         showWarning = true;
-    } else if (window.innerHeight < 550) {
-        showWarning = true;
-    } else if (window.innerWidth <= 299 && window.innerHeight <= 550) {
-        showWarning = true;
+    }else{
+        showWarning = false;
     }
 
-
-    if (showWarning) {
-       window.alert("Game can't be shown properly due to device dimesnion !");
+    if(showWarning){
+        warningEmnt.style.display="block";
     }else{
-        showWarning=false;
+        warningEmnt.style.display="none";
     }
 }
 
