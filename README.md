@@ -36,18 +36,16 @@ Mazen Al Ali
 ## Table of Contents
 🚀 **merit & beyond**
 
-- [Table of Contents](#table-of-contents)
 - [Wordle Game](#wordle-game)
   * [Live Site](#live-site)
   * [Repository](#repository)
   * [Author](#author)
-  * [Table of Contents](#table-of-contents-1)
+  * [Table of Contents](#table-of-contents)
 - [UX](#ux)
   * [Target Audience](#target-audience)
   * [Project Goals](#project-goals)
   * [User Stories](#user-stories)
     + [Site User Stories](#site-user-stories)
-    + [Website Owner Stories](#website-owner-stories)
     + [Developer Stories](#developer-stories)
   * [Design Choices](#design-choices)
     + [Typography](#typography)
@@ -63,18 +61,8 @@ Mazen Al Ali
     + [CSS Validation](#css-validation)
     + [HTML Validation](#html-validation)
     + [Javascript Validation](#javascript-validation)
-    + [Javascript Validation](#javascript-validation-1)
   * [Compatibility and Responsive Testing](#compatibility-and-responsive-testing)
-  * [Manual Testing](#manual-testing)
-    + [Defect Tracking](#defect-tracking)
-    + [Defects of Note](#defects-of-note)
-  * [Outstanding Defects](#outstanding-defects)
-  * [Core Web Vitals](#core-web-vitals)
   * [Accessibility Testing](#accessibility-testing)
-    + [Accessibility Audits](#accessibility-audits)
-    + [Keyboard Navigation](#keyboard-navigation)
-    + [Chrome Vox Reader](#chrome-vox-reader)
-  * [Automated Testing](#automated-testing)
 - [Technologies Used](#technologies-used)
   * [Languages](#languages)
   * [Frameworks, Libraries & Programs Used](#frameworks--libraries---programs-used)
@@ -88,10 +76,6 @@ Mazen Al Ali
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-
-Generate after readme is complete by copying and pasting your readme from this point & below into this tool:
-- [mardown table of contents generator](https://ecotrust-canada.github.io/markdown-toc/)
-**NOTE:** It does have some bugs if you have dashes or trailing spaces in your headers
 
 # UX
 🚀 **merit & beyond**
@@ -124,8 +108,8 @@ You can have many kinds of users so feel free to have one section or the subsect
 ### Site User Stories
 🚀 **merit & beyond**
 
-### Website Owner Stories
-🚀 **merit & beyond**
+Many of my friends reposrted that the game is very interestting but it should have some features like giving hints about the random word which can make is easier to anticpate the game. This feature is a good feature to have in the future as I am also conveniced about it.
+
 
 ### Developer Stories
 🚀 **merit & beyond**
@@ -303,130 +287,30 @@ There are two JS files used in this game. Both of them are validated on the foll
 
 
 
-## Manual Testing
-🚨**Required** 
-
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. 
-
-There are 3 ways you can document your testing:
-
-**1. Markdown**
-
-Describing your testing process is via scenarios, right here such as:
-
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
-
-**2. Use Spreadsheets**    
-
-Here is a [Manual Testing Template](https://docs.google.com/spreadsheets/d/1vc1IVL-ydQwWeWMqnk_GRox6HE6qxDLpchGse8Crayo/edit#gid=296578096) that you can use as a starting point to keep track of your testing efforts. Make a copy of it in your own account and update as needed to reflect the browsers you are testing and features.  
-
-**3.Use Github Agile Tools**
-
-Create Custom Issue Template and A Project Board in git hub.[Here's a brief overview](https://docs.google.com/document/d/1nDS5tZeMO77Dfq85IZGMSV6C41XaPm9FwcpR3k-UTVc/edit?usp=sharing) I put together on how to do this
-
-It's ok to spot check specific functionality across devices and browsers but each page should be viewed as a whole for each device/browser combo at least once too.
-
-A quick way to check if items are exceeding the screen width of a project is to run this javascript in the console for various screen emulations:
-
-```
-var docWidth = document.documentElement.offsetWidth;
-[].forEach.call(document.querySelectorAll('*'),function(el){if(el.offsetWidth > docWidth){console.log(el);}});
-```
+**Important to Note** 
 
 
-### Defect Tracking
-🚨**Required** 
-
-Try to create issues in real time as it better reflects the daily life of a developer.
-
-GitHub has an issues bar that helps you track things pretty quickly. Here's a [guide to GitHub Defects](Defects.md)
-
-You could do track them as bullet items in this document, or create a google speadsheet too. 
-
-### Defects of Note
-🚀 **merit & beyond**
-
-Some defects are more pesky than others. Highlight 3-5 of the bugs that drove you the most nuts and link to them directly here.
-
-
-## Outstanding Defects
-🚨**Required** 
-
-It's ok to not resolve all the defects you found as long as:
-- it does not impact a user from completing a vital function on the website
-- it only affects a very small subset of users
-- is an extreme edge case that very few users would try
-- there is an open issue against a framework, browser or technology used
-
-If you know of something that isn't quite right, create an issue and link to it here and explain why you chose not to resolve it. 
-
-Sometimes it's as simple, word wrapping issue that makes the site look odd at a certain screensize that you just didn't have time to fix due to the impending deadline it's best to mention it but note why you allowed it to go live: "Yes it looks odd, but it doesn't impact core functionality of the site." than to let the accessors think you didn't notice it. 
-
-## Core Web Vitals
-🚀 **merit & beyond**
-
-SEO is greatly impacted by your core web vitals. The readout from https://web.dev/measure/ which is essentially a lighthouse audit gives your site scores in 4 categories. Ideally you want your site to be in the green for all 4 scores. web.dev has dedicated servers to test deployed sites without extensions that skew the results, so it's best to get results from this site.
- You should talk about the results for each section pay attention to 
+Currently I have tried my best to get the UI as responsive as possible but I figured an issue related to a device called (Nest Hub) which turns to be a device from google used to manage other devices inside smart houses. The referenced device is not supposed to be used as a game device since it is fixed in a wall or welcome device at an entrance.
 
 ## Accessibility Testing
 🚨**Required** 
 
-Accessibility testing is aimed to make sure that those with visual or physical disabilities can still browse your website. Some users have had strokes or accidents that make it difficult to use a mouse, so they use keyboard keys to tab through sites. Others use screen readers that rely on HTML tags to help the user navigate quickly through the site to find information they want, others have color blindness or contrast issues. It's the law to provide services 
-Here's a [site](https://www.w3.org/WAI/fundamentals/accessibility-intro/#:~:text=Accessibility%20is%20Important%20for%20Individuals%2C%20Businesses%2C%20Society,-The%20Web%20is&text=That%20is%2C%20the%20accessibility%20barriers,older%20people) where you can learn more about accessibility and the internet.
-
-### Accessibility Audits
-🚨**Required** 
-
-Accessibility audits run through the HTML and determine if the parts of the WCAG (web content accessibility guidelines ) that are implemented through HTML tags and attributes are present. They can do some checking for low vision/contrast stuff too.
-
-You should run your deployed website pages through  at least on auditing tool. lighthouse's audit to check performance, accessibility, best practices and SEO scores. You should aim to get 85 or higher score on accessibility. 
-
-**You should fix issues associated with:**
-- contrast 
-- aria labels
-- alt text
-- large images
-- skewed images
-
+Testing the accessibility of the wordle game is done used the following tool provided by Google Chrome and demonstrated by Code Institute. Screenshots are taken after the test
 **Lighthouse**
-https://web.dev/measure/  If you have lower scores, read the report and follow the links to address the flagged issues. You can run this tool from Chrome Dev Tools too against your local machine, but chrome extensions can sometimes give you missing alt text on things like the grammarly plug in tracking pixel.
+All tests using Lighthouse is done on the deployed version on the GitHub Pages
 
-You want a score in the green for accessibility and should look at ways to get it to 100.
+**Index.html** shows 100% accessibility shown in the following screenshot 
+![wordle-game-index](assets/README-imgs/accessibility-index-c.png)
 
-**[WAVE chrome](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh?hl=en-US) extension**
-Wave is developed by webaim.org and does a bit better at contrast issues and uses 2.1 guidelines
+after loading the game baord I have run the lighthouse again to see any changes, but it shows perfect results
 
-**Contrast Checkers**
-- https://webaim.org/resources/contrastchecker/
-- https://color.a11y.com/
+![wordle-game-board](assets/README-imgs/accessiblity-index-a.png)
 
-### Keyboard Navigation
-🚀 **merit & beyond**
-
-Another way to accessibility test your site is to try to click on the browser URL and see what happens if you use the tab, arrow and enter keys. Does it work well or does the user get stuck? Check this in a couple browsers as the focus & active outlines are typically styled by the browser
-
-The expected results for various keyboard entries and field types can be found [here](https://webaim.org/techniques/keyboard/#testing)
-
-You can take a video of this testing if you want and convert it to a gif and paste that into your readme. Record something to yourself in a Slack direct message, then download it. Then you can use https://cloudconvert.com/mp4-to-gif to convert the mp4 to a gif and just paste it into the readme via GiHu, and it'll resolve itself.
-
-### Chrome Vox Reader
-🚀 **merit & beyond**
-
-If you are really ambitious, you can use the [VoxReader](https://chrome.google.com/webstore/detail/screen-reader/kgejglhpjiefppelpmljglcjbhoiplfn?hl=en) extension in chrome to see what your site sounds like on a screen reader. It really drives home the need for good aria-labels & semantic HTML.
-
-## Automated Testing
-🚀 **merit & beyond**
-
-Once you write javascript, you could use jasmine or jest to automate testing. This stuff isn't covered until you get into the P4 materia!  [Here's a quick tutorial](https://www.youtube.com/watch?v=FgnxcUQ5vho) if you are interested.
+the **404.html** page shows merely same result 
+![wordle-game-404-error](assets/README-imgs/accessibility-404-b.png)
 
 # Technologies Used
 🚀 **merit & beyond**
-
-This section just summarizers tools and programming languages you used.
 
 ## Languages
 🚀 **merit & beyond**
@@ -446,6 +330,7 @@ Along with using programming decalrative (HTML & CSS) and imperative (JS) langua
 - font awesome
 - amiresponsive
 - table of contents creator
+- VS Code IDE
 
 # Deployment
 🚨**Required** 
