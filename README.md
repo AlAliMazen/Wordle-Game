@@ -1,9 +1,4 @@
 
-# Table of Contents
-Copy your readme to http://ecotrust-canada.github.io/markdown-toc/ to make a table of contents.  This will help assessors to see the structure of your readme. Just test it out ast this tool isn't perfect. It tends to mess up with special characters like dashes.
-
-====================================== The Sections you Fill in are below ==============================
-
 # Wordle Game
 🚨**Required** 
 
@@ -41,6 +36,59 @@ Mazen Al Ali
 ## Table of Contents
 🚀 **merit & beyond**
 
+- [Table of Contents](#table-of-contents)
+- [Wordle Game](#wordle-game)
+  * [Live Site](#live-site)
+  * [Repository](#repository)
+  * [Author](#author)
+  * [Table of Contents](#table-of-contents-1)
+- [UX](#ux)
+  * [Target Audience](#target-audience)
+  * [Project Goals](#project-goals)
+  * [User Stories](#user-stories)
+    + [Site User Stories](#site-user-stories)
+    + [Website Owner Stories](#website-owner-stories)
+    + [Developer Stories](#developer-stories)
+  * [Design Choices](#design-choices)
+    + [Typography](#typography)
+    + [Imagery](#imagery)
+    + [Animations and Transitions](#animations-and-transitions)
+  * [Design Elements](#design-elements)
+  * [Wireframes](#wireframes)
+    + [Features](#features)
+    + [Implemented Features](#implemented-features)
+  * [Future Features](#future-features)
+  * [Testing](#testing)
+  * [Validation Testing](#validation-testing)
+    + [CSS Validation](#css-validation)
+    + [HTML Validation](#html-validation)
+    + [Javascript Validation](#javascript-validation)
+    + [Javascript Validation](#javascript-validation-1)
+  * [Compatibility and Responsive Testing](#compatibility-and-responsive-testing)
+  * [Manual Testing](#manual-testing)
+    + [Defect Tracking](#defect-tracking)
+    + [Defects of Note](#defects-of-note)
+  * [Outstanding Defects](#outstanding-defects)
+  * [Core Web Vitals](#core-web-vitals)
+  * [Accessibility Testing](#accessibility-testing)
+    + [Accessibility Audits](#accessibility-audits)
+    + [Keyboard Navigation](#keyboard-navigation)
+    + [Chrome Vox Reader](#chrome-vox-reader)
+  * [Automated Testing](#automated-testing)
+- [Technologies Used](#technologies-used)
+  * [Languages](#languages)
+  * [Frameworks, Libraries & Programs Used](#frameworks--libraries---programs-used)
+- [Deployment](#deployment)
+  * [Deploy to GitHub Pages](#deploy-to-github-pages)
+- [Credits](#credits)
+  * [Content](#content)
+  * [Media](#media)
+  * [Code Refernces](#code-refernces)
+  * [Acknowledgments](#acknowledgments)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
 Generate after readme is complete by copying and pasting your readme from this point & below into this tool:
 - [mardown table of contents generator](https://ecotrust-canada.github.io/markdown-toc/)
 **NOTE:** It does have some bugs if you have dashes or trailing spaces in your headers
@@ -48,10 +96,9 @@ Generate after readme is complete by copying and pasting your readme from this p
 # UX
 🚀 **merit & beyond**
 
+Wordle game has the theme which resembles the traffic lights. From the first glance I thought it like so, wheever the letter turns green, go with this letter at the same position. Whenever it is yellow, prepare yourself to use this letter but on a different position. Thought Red Light doesn't fit in, rather it is gray which is nto that intuitive for player indicating that this letter is not included in the word. 
 
-This particular section can be blank, it's just a wrapper for the child sections.
-
-The subsections provide insight into your UX process, focusing on why you made the user experience decisions you did. If the target audience and user base drove you to a certain look and feel call it out so the accessors can't be objective and say I don't like it. 
+I think in the future, I will repace the gray color with a soft red color for indicating a warning not to use this letter again. Red color has the characteristics that it refers to something either not good or even wrong. Discussing this topic with my friends, thy find the gray color not that suitable for this indication and that is why I will properly replace it with soft red color from the color platte I used in the whole game.
 
 ## Target Audience
 🚀 **merit & beyond**
@@ -83,6 +130,8 @@ You can have many kinds of users so feel free to have one section or the subsect
 ### Developer Stories
 🚀 **merit & beyond**
 
+- As a developer I have though, it is going to be difficult to implement the logic of the wordle game, but it turns to be not that hard after making use of the functinos and instrcution shown by the JS Essentials by Code Institue. I could understand the Game logic and I started implementing the fuctions on after another as the module goes on. It is worth mentioning that searching the web for JS is very helpful and overwohlming at the same time. 
+
 ## Design Choices
 🚀 **merit & beyond**
 
@@ -113,20 +162,19 @@ You may want to re-watch the videos about the [5 planes of UX development ](http
 
 ### Imagery
 🚀 **merit & beyond**
-
-Explain why you used certain icons and images on your site & tie it back into your target audience
+Two main images I have brough from Pexels for using as Background for the 404 page. These images are also hat the topic which is related in a way or another on brainstorming for guessing words.
 
 ### Animations and Transitions
 🚀 **merit & beyond**
 
-- discuss any special animations or transitions you've included 
-- special hover state effects
+- I have implemented the transform attribute from JavaScript to give the game board special effect after a word is submitted. The row gets colored and then it rotates from 0 to 90 to 180 to 360 
+
+- After the game ends regardless if player has won the game or lost, the on-screen keyboard key gets the same totating effect from the game board to be restted. 
 
 ## Design Elements
 🚀 **merit & beyond**
 
-what are some of they key User Interactive elements and bits of functionally you will have on your site:
-tables, accordions, maps, videos, forms with inputs, text areas, select/dropdowns
+While player playes the game, it is possible to switch the backgrund music on or off. The icon of volumn in at the top game screen is connected to a JS function that turns backgriund music on and off. The Icon itself will also be changed reflecting the status of the music. Based on the status of music, the corresponding icon will be shown.
 
 ## Wireframes
 🚀 **merit & beyond**
@@ -206,24 +254,10 @@ All html pages included in this game are validated on the following website.
 **404.html**
 ![img.png](documentation/images/404-html-validation.png)
 
-### Javascript Validation
-🚨**Required** 
-
-This validator requires you to copy in your code. For each JavaScript file:
-
-- include a screenshot of the JS panel and the right-hand panel that shows now errors. 
-
-If you have tons of warnings about spacing and semicolons, right,click your file to format in gitPod and see if that helps. If you have a warning about ES6 or 7 add this to the top of your file:
-- `/*jshint esversion: 6 */ `
-
-[JS validation](https://jshint.com) 
-
-**pie.js**
-![img_3.png](img_3.png)
 
 ### Javascript Validation
 🚨**Required** 
-There aretwo JS files used in this game. Both of them are validated on the following website and showing no errors
+There are two JS files used in this game. Both of them are validated on the following website and showing no errors
 [JSON validation](https://jsonlint.com/) 
 
 **main.js**
@@ -397,72 +431,102 @@ This section just summarizers tools and programming languages you used.
 ## Languages
 🚀 **merit & beyond**
 
--write bullet points for the languages you used (HTML & CSS)
+Programming languages used to develope the Wordle Game on this website is the main **HTML** **CSS** and **JavaScript**
 
 ## Frameworks, Libraries & Programs Used
 🚀 **merit & beyond**
 
-List out the tools you used with a link and a short description (this helps others figure out where to get the bonus points & reminds you what you used for your next project
+Along with using programming decalrative (HTML & CSS) and imperative (JS) languages I have used following technologies and websites to get my project done 
+
 - Balsamiq
 - Coolors.co
 - fontawesome
-- gitpod
 - github
 - google fonts
 - font awesome
 - amiresponsive
 - table of contents creator
-- markdown table generator
 
 # Deployment
 🚨**Required** 
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages).
-
-In particular, you should provide all details of the differences between the deployed version and the development version, if any.
-
-Remember to use proper markdown for commands and enumerated steps.
-
-
-You may want to re-watch the [initial deployment in gitpod video](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LR101+2021_T1/courseware/4a07c57382724cfda5834497317f24d5/9b06129195c64fada6783de9cfe82d60/) when writing up this section.
-
 ## Deploy to GitHub Pages
-🚨**Required** 
+I have made it sure to deploy me project as early as possible using the GitHub new service; that is, the GitHub Pages and I followed the following steps to do so: 
 
-Write out steps you would take and test them to deploy your code to GitHub Pages, include screenshots if you think they would make the process easier.
+    1- Open the Repository which I want to deploy.
+    2- Click on the Settings in the menubar as shown in the following screen shot
 
-## Forking The Repository
-🚀 **merit & beyond**
+![Seetings on inside Repsoitory to deploy](assets/README-imgs/deployment-s1.png)
 
-A fork creates a completely independent copy of Git repository. In contrast to a fork, a Git clone creates a linked copy that will continue to synchronize with the target repository, so if you want to ensure other people don't commit to your public repo, you might want to tell them to fork the repository :) 
+    3- Click on **Pages** on the left hand side.
+    4- Right from the shown screen, choose the branch to deply. 
+    5- Set the branch to be the **main** branch and click on save.
+![Pages-Branche-Root](assets/README-imgs/deployment-s2.png)
 
-## Run Locally With GitPod
-🚀 **merit & beyond**
+    6- Deploying on GitHub pages takes sometime and you can see it when it is done on the main Repository page.
+![Deployment progress](assets/README-imgs/deployment-s3.png)
 
-Enumerate and write the steps of how to run a project locally via gitPod. Include Screenshots to maximize the impact of the instructions.
+
 
 # Credits
 🚨**Required** 
 
-To avoid plagiarism amd copyright infringement, you should mention any other projects, stackoverflow, videos, blogs, etc that you used to gather imagery or ideas for your code even if you used it as a starting point and modified things. Giving credit to other people's efforts and ideas that saved you time acknowledges the hard work others did. 
+Wordly Game is very know espacially in the English speaking countries where it is originally created and coded. I have used the following media and snippet to get an idea about what it is and how it works. However, I want to assure that the code written here is not in any way copied or similar to any of the available online sites except for the word list which is made public on GitHub under free license to use.
 
 ## Content
 🚨**Required** 
 
-Use bullet points to list out sites you copied text from and cross-reference where those show up on your site
+ - Information about what Wordly game is and how to play it is found under [How to paly wordly game board](https://youtu.be/EQpQjLusKZw?si=H0CK00sqdU9mFvNS)
+
+ - Word list were brough from free CodeCamp found under [How to build wordle Game in JavaScript](https://www.freecodecamp.org/news/build-a-wordle-clone-in-javascript/)
+
+ - Live runnable example is shown in this youtube video [Build wordle game](https://www.youtube.com/watch?v=j7OhcuZQ-q8)
+
+ - Playing wordle on the website to get a sense of how logic work behind the sense made clearly under [wordle game](https://wordlegame.org) wher e more languages is also possible to play around with.
 
 ## Media
 🚨**Required** 
 
-Make a list of sites you used images from. If you used several sites try to match up each image to the correct site. This includes attribution for icons if they came from font awesome or other sites, give them credit.
+As for the Media content I have used Canva as main destination for creating the Logo and free Sound Library to get the background musis. 
+ -  Logo is create using Canva [Logo Design](https://www.canva.com/design/DAF8EBhyiTc/iZ9f48KS0KtgqPmznVzW8g/edit) .
 
-You should not be using images taken from copyrighted sites, but only royalty free ones. Try typing `!copyright` in slack and see what help it gives you for this topic.
+- Sound Track is brought from playonloop website called [sunset-break](https://www.playonloop.com/2012-music-loops/sunset-break/) .
+
+- Font is done using Google font found on the great Google library called [Nato-sans](https://fonts.google.com/noto/specimen/Noto+Sans)
+
+- Color Plate is a mixture brought from coolors website found under this Link [color Platte](https://coolors.co/palette/ef476f-ffd166-06d6a0-118ab2-073b4c) 
+
+- Gray Color is also brought from coolors found under this link [gray color plate](https://coolors.co/palette/23233b-2c4268-007bba-00a9e2-7ccdf4-bce3fa-9b9c9b-b2b0b0-c5c6c6-ebebeb)
+
+- Icons for both instructions and sound effects is brought from fontawoesome website [information icon](https://fontawesome.com/icons/circle-info?f=classic&s=solid) |
+[music on Icon](https://fontawesome.com/icons/volume-high?f=classic&s=solid) |
+[muted music Icon](https://fontawesome.com/icons/volume-xmark?f=classic&s=solid) .
+
+- Background image used in the 404 Page is brought from Pexels [ADHD Super Powers Written on Chalkboard
+](https://www.pexels.com/photo/adhd-super-powers-written-on-chalkboard-8378741/) .
+
+- Background image used as background also for 404 page is brough from Pexels [Brown Scrabble Boards With Letters](https://www.pexels.com/photo/brown-scrabble-boards-with-letters-278887/) .
+
+## Code Refernces
+- List or words is brought from [Word List JS File](https://github.com/Morgenstern2573/wordle_clone/blob/master/build/words.js)
+
+- Grid CSS Reference is implemented using [CSS-Trick on Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+
+- Interactive Grid in CSS is imeplemented  usingg [interactive Guide to CSS Grid](https://www.joshwcomeau.com/css/interactive-guide-to-grid/)
+
+- A Complete Guide to Flex in CSS is implemented using [CSS Trick Flex in CSS](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
+- Guide on Animation and transform as well as transition is brought from MDN Web Docs 
+[transfomr Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/transform) |
+[transiton Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) |
+[Animation Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/animation)
 
 ## Acknowledgments
 🚀 **merit & beyond**
 
-This is the section where you refer to code examples, mentors, blogs, stack overflow answers and videos that helped you accomplish your end project. Even if it's an idea that you updated you should note the site and why it was important to your completed project.
+Guidelines on how JS function are best used and implemented is made clesr based on the lessons provided by:
 
-If you used a CodeInstitute Example project as a starting point. Make note of that here.
+- [Code Institute Full-Stack-Developer Cours](https://codeinstitute.net/de/full-stack-software-development-diploma/)
 
+- My Mentor Mrs. Malia on Slack who always enrich my knowledge about new features and guidelines and suggestions. No need to say that she took my step under the loop and always being very precise about how and what to do. 
 
