@@ -33,9 +33,6 @@ When game starts it looks like following screenshot ![Game-board](assets/README-
 
 Mazen Al Ali
 
-## Table of Contents
-🚀 **merit & beyond**
-
 - [Wordle Game](#wordle-game)
   * [Live Site](#live-site)
   * [Repository](#repository)
@@ -56,8 +53,7 @@ Mazen Al Ali
     + [Features](#features)
     + [Implemented Features](#implemented-features)
   * [Future Features](#future-features)
-  * [Testing](#testing)
-  * [Validation Testing](#validation-testing)
+  * [Testing and Validation](#testing-and-validation)
     + [CSS Validation](#css-validation)
     + [HTML Validation](#html-validation)
     + [Javascript Validation](#javascript-validation)
@@ -75,6 +71,7 @@ Mazen Al Ali
   * [Acknowledgments](#acknowledgments)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 
 # UX
@@ -100,10 +97,6 @@ I think in the future, I will repace the gray color with a soft red color for in
 
 ## User Stories
 🚀 **merit & beyond**
-
-This section lists outs as a X I want Y, so I can Z format. It helps drive out the features you will build.
-
-You can have many kinds of users so feel free to have one section or the subsections listed or more
 
 ### Site User Stories
 🚀 **merit & beyond**
@@ -166,7 +159,6 @@ While player playes the game, it is possible to switch the backgrund music on or
 Wireframes are done using the Balsamiq software licesned by Code Institute and I have made a wireframe for **desktop** and **mobile devices** and both can be found under the assets/wireframes .
 
 
-
 ### Features
 🚨**Required** 
 
@@ -200,19 +192,14 @@ Right from the beginning when the game loads, it starts by showing user a set of
 ## Future Features
 🚀 **merit & beyond**
 
-One of the future feature which I would like to implement when completing the database module it to link this game to a central database and add statistics to the game to show results between different player from all over the globe.
+- One of the future feature which I would like to implement when completing the database module it to link this game to a central database and add statistics to the game to show results between different player from all over the globe.
 
-## Testing
+
+- Gives hints after the third and fourth row about the random word. This requires to turn the words list to an object where each word can have more than one hint and its meaning when player either guessed the word games finishes up.
+
+
+## Testing and Validation
 🚨**Required** 
-
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
-
-## Validation Testing
-🚨**Required** 
-
-
 
 ### CSS Validation
 🚨**Required** 
