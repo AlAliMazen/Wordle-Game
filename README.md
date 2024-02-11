@@ -20,7 +20,9 @@ When game starts it looks like following screenshot ![Game-board](assets/README-
 ## Live Site
 🚨**Required** 
 
-- A live Wordle Game based on the written and implemented code is deployed on GitHub Pages under [Wordle-Game](https://alalimazen.github.io/Wordle-Game/) .
+- A live Wordle Game based on the written and implemented code is deployed on GitHub Pages under
+
+  [Wordle-Game](https://alalimazen.github.io/Wordle-Game/)
 
 ## Repository
 🚨**Required** 
