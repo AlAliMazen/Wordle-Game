@@ -379,6 +379,8 @@ As for the Media content I have used Canva as main destination for creating the 
 
 - Background image used as background also for 404 page is brough from Pexels [Brown Scrabble Boards With Letters](https://www.pexels.com/photo/brown-scrabble-boards-with-letters-278887/) .
 
+- For favicon I have used the [Favicon generator](https://favicon.io/) 
+
 ## Code Refernces
 - List or words is brought from [Word List JS File](https://github.com/Morgenstern2573/wordle_clone/blob/master/build/words.js)
 
