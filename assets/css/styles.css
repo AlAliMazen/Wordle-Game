@@ -384,10 +384,10 @@ ul {
         font-size: 300%;
         font-family: 'Noto Sans', sans-serif;
     }
-
+    /*
     #play-again-btn {
         width: 20%;
-    }
+    }*/
 }
 
 
@@ -431,7 +431,7 @@ ul {
     }
 
     #play-again-btn {
-        width: 20%;
+        width: 40%;
     }
 
 }
@@ -454,7 +454,7 @@ ul {
     }
 
     #play-again-btn {
-        width: 15%;
+        width: 20%;
         margin: 5px auto;
         padding: 2px;
     }
