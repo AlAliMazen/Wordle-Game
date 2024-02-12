@@ -39,7 +39,6 @@ Mazen Al Ali
   * [Live Site](#live-site)
   * [Repository](#repository)
   * [Author](#author)
-  * [Table of Contents](#table-of-contents)
 - [UX](#ux)
   * [Target Audience](#target-audience)
   * [Project Goals](#project-goals)
@@ -59,6 +58,8 @@ Mazen Al Ali
     + [CSS Validation](#css-validation)
     + [HTML Validation](#html-validation)
     + [Javascript Validation](#javascript-validation)
+    + [Manuel Testing](#manuel-testing)
+    + [Defects](#defects)
   * [Compatibility and Responsive Testing](#compatibility-and-responsive-testing)
   * [Accessibility Testing](#accessibility-testing)
 - [Technologies Used](#technologies-used)
@@ -69,11 +70,10 @@ Mazen Al Ali
 - [Credits](#credits)
   * [Content](#content)
   * [Media](#media)
-  * [Code References](#code-refernces)
+  * [Code Refernces](#code-refernces)
   * [Acknowledgments](#acknowledgments)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 
 
 # UX
@@ -170,19 +170,38 @@ Right from the beginning when the game loads, it starts by showing user a set of
 
 
 - Instruction window: When game load at the first stage, it opens up with a how-to-play instructions. This window is connected to Javascript file through a function responsible to hide this window and show the game UI.
+![instructions](assets/README-imgs/wg-welcom-btn-instructions.png) .
 
-- On the top of the game board there are two icons on is little i circle used to show the instructions and hide the whole game UI elements and hid it again to show the game UI. 
+
+- On the top of the game board there are two icons the first one is little i circle used to show the instructions and hide the whole game UI elements and hid it again to show the game UI. 
+
+![i icon for instructions](assets/README-imgs/wg-i-icon.png)
+
 
 - Next to the instructions icon there is a volume icon. When clicked a background music will start playing help player to listen to music while playing. The same icon is also used to pause the background music.
+![background-music](assets/README-imgs/wg-bg-music.png)
 
 
 - Game board: a grid UI of 5 squares and 6 rows. Whenever player is ready with a guess of a word, player can click on **Submit** key to check the typed word against the random selected word.
+![game board and keyboard](assets/README-imgs/wg-coloring-gameboard-and-keyboard-with-scoring.png)
 
 - Coloring Game board: when letter is at right position, square will be turned into green. When letter is at wrong position but still included in the random word, square will be turned into yellow. When letter is not included in the random word, square will be turned into gray. 
 
 - Play again button: This button is going to be shown only when either play wins the game at what ever row, or when player loses without guessing the right word. **Play again** button is used to reset both game board and the on-screen keyboard. 
+![play again](assets/README-imgs/wg-play-again-a.png)
 
 - Notifications: There are 3 notification while game is running. First one is when user has guessed the random word using 'window.alert()' built in function. The second notification is when player loses the game, a notification will be shown telling user that game is over and what the random word is. The last notification is shown when the size of the browser or device dimension. 
+
+
+when device dimension is too small
+![Warning layout](assets/README-imgs/wg-notification-dimesnion.png)
+
+When Player lost and the right word is shown
+![finish game](assets/README-imgs/wg-Notification-lost-rigth-word-b.png)
+
+
+When winning the game 
+![win the game](assets/README-imgs/wg-winning-notification.png)
 
 - On-screen keyboard: The keyboard is used to get the letter into the game board squares. The Keyboard get also colored when player has guessed right letter at right position, right letter at wrong position or not included letter to avoid these letter on the next try. 
 
@@ -238,6 +257,21 @@ There are two JS files used in this game. Both of them are validated on the foll
 
 **words** 
 ![list-of-words](assets/README-imgs/js-words-validation.png)
+
+### Manuel Testing
+
+Testing is an essential part of any development work and through out the game I used to have console out put at certain lines to see whether the shown result corresponds to my expectation or not. Not to forget the other keyword which is 'debugger' that helps me debugging every single function. Following screen shot indicates how I used the 'debugger' as a breakpoint to see the values of my variables while the game is running. This process is always recommended to be used in Google chrome which has a built in debugging mechanisms and tools.
+![manuel debug](assets/README-imgs/wg-manuel-test.png)
+
+### Defects
+
+- After running the game more than 20 times to try it on different devices including old and new, I have noted that the 'play again' button doesn't have enough space or the font size is not that clear.
+
+- Words List is also not that clean and some words have double letters after each other which causes a problem for coloring and comparing mechanism. This happens sometimes and I have found it only one single test. I have cleared the cache of my browser and it never happened again.
+
+- Animation Bug : This one is very strange. It happens on Safari browser after running the game for more than 10 times. Game board and the keyboard keys doesn't get the flip effect.
+
+
 
 ## Compatibility and Responsive Testing
 
