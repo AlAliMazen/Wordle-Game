@@ -59,7 +59,7 @@ document.onreadystatechange = function () {
         do {
             randomWord = getRandomWord();
         }
-        while (randomWordsArr.includes(randomWord))
+        while (randomWordsArr.includes(randomWord));
         randomWordsArr.push(randomWord);
     }
 };
@@ -178,7 +178,6 @@ function checkGuessedWord(usrWord) {
     if (usrWord.length === 5) {
         if (usrWord === randomWord) {
             compareWords(usrWord);
-            debugger;
             flipRow();
             expectedWordsArr.push(usrWord);
             if (rowIndex === 0) {
@@ -193,7 +192,6 @@ function checkGuessedWord(usrWord) {
             return;
         } else {
             compareWords(usrWord);
-            debugger;
             flipRow();
         }
         //add expectedWord to the array, reset the expectedWord and move currentIndex to the second row
@@ -264,7 +262,7 @@ function flipRow() {
         case 5: letterPosition = 25; break;
     }
     for (let i = 0; i < 5; i++) {
-        ltrsSquareArr[letterPosition + i].style.transition = "transform 2s ease";
+        ltrsSquareArr[letterPosition + i].style.transition = "transform 1s ease";
         //flip 
         ltrsSquareArr[letterPosition + i].style.transform = "rotateY(90deg)";
         ltrsSquareArr[letterPosition + i].style.transform = "rotateY(180deg)";
@@ -343,10 +341,10 @@ function updateScore(indx) {
 function writeScore() {
     let scoreHTML = document.getElementById('score');
     if (usrScore !== 0) {
-        scoreHTML.innerHTML = usrScore + " points";
+        scoreHTML.textContent = usrScore + " points";
         return;
     } else {
-        scoreHTML.innerHTML = usrScore;
+        scoreHTML.textContent = usrScore;
     }
 
 }
@@ -354,6 +352,7 @@ function writeScore() {
  * reset all the variables to its default and start new game
  */
 function playAgain() {
+    
     emptyLetterBx = 0;
     letter = '';
     expectedWord = '';
@@ -363,20 +362,24 @@ function playAgain() {
     keyboardBtns = document.querySelectorAll(".key");
 
     for (let i = 0; i < ltrsSquareArr.length; i++) {
-        ltrsSquareArr[i].textContent = "";
-        ltrsSquareArr[i].style.backgroundColor = "#ffffff";
+        if(ltrsSquareArr[i].textContent.length!==0){
+            ltrsSquareArr[i].textContent="";
+            ltrsSquareArr[i].style.backgroundColor="#ebebeb";
+        }
     }
+   
     for (let i = 0; i < keyboardBtns.length; i++) {
-        keyboardBtns[i].style.transition = "transform 2s ease";
+        keyboardBtns[i].style.transition = "transform 1s ease";
+
         keyboardBtns[i].style.transform = "rotateY(90deg)";
         keyboardBtns[i].style.transform = "rotateY(180deg)";
         keyboardBtns[i].style.transform = "rotateY(270deg)";
         keyboardBtns[i].style.transform = "rotateY(360deg)";
-        keyboardBtns[i].style.backgroundColor = "#ffffff";
+
+        keyboardBtns[i].style.backgroundColor ="#FFFFFF";;
     }
     usrScore = 0;
     writeScore();
-
     document.getElementById("submit-btn").disabled = true;
     document.getElementById("del-btn").disabled = true;
     document.getElementById("play-again-btn").style.display = "none";
@@ -385,7 +388,7 @@ function playAgain() {
     do {
         randomWord = getRandomWord();
     }
-    while (randomWordsArr.includes(randomWord))
+    while (randomWordsArr.includes(randomWord));
     randomWordsArr.push(randomWord);
 }
 /**
