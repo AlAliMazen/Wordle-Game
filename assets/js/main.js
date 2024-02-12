@@ -16,14 +16,14 @@ let keyboardBtns = document.querySelectorAll(".key");
 let keyboardBtnsTxt = [];
 let randomWord = "";
 let randomWordsArr = [];
-let showWarning = false;
 
-//Scoring right letter + right position = 20 points, right leter and wrong position =10, every crow is -5 
+
+//Scoring right letter + right position = 20 points, right letter and wrong position =10, every crow is -5 
 let usrScore = 0;
 
-//Add music varaibles 
+//Add music varibale 
 let bgMusic = document.getElementById('bg-music');
-bgMusic.volume = 0.1;//start up volumn regardless the device 
+bgMusic.volume = 0.1;//start up volume regardless the device 
 bgMusic.loop = true;
 let soundOn = false;
 
@@ -32,11 +32,11 @@ let soundOn = false;
 window.onresize = resizeWarning;
 
 /**
- * if the device dimention doesn't fit the game it will trigger this message
+ * if the device dimension doesn't fit the game it will trigger this message
  */
 function resizeWarning() {
+    let showWarning = false;
     let warningEmnt=document.getElementById('warning');
-    console.log(warningEmnt.children[0].tagName);
     if ((window.innerWidth < 300)||(window.innerHeight < 550)||(window.innerWidth <= 299 && window.innerHeight <= 550)) {
         showWarning = true;
     }else{
@@ -161,7 +161,7 @@ function insertLetter(usrTypedLtr) {
     expectedWord += usrTypedLtr;
     if (expectedWord.length < 5) {
         document.getElementById("submit-btn").disabled = true;
-        //delete btn should be aciavted if user word is 1 letter long
+        //delete btn should be activated if user word is 1 letter long
         document.getElementById("del-btn").disabled = false;
     } else {
         document.getElementById("submit-btn").disabled = false;
@@ -178,6 +178,7 @@ function checkGuessedWord(usrWord) {
     if (usrWord.length === 5) {
         if (usrWord === randomWord) {
             compareWords(usrWord);
+            debugger;
             flipRow();
             expectedWordsArr.push(usrWord);
             if (rowIndex === 0) {
@@ -192,6 +193,7 @@ function checkGuessedWord(usrWord) {
             return;
         } else {
             compareWords(usrWord);
+            debugger;
             flipRow();
         }
         //add expectedWord to the array, reset the expectedWord and move currentIndex to the second row
